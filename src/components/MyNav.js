@@ -1,15 +1,14 @@
 import React from  'react'
-import {Navbar, Nav} from  'react-bootstrap'
 import {Link} from  'react-router-dom'
+import {Navbar, Nav} from  'react-bootstrap'
 
 function MyNav(props) {
 return (
-	<Navbar  bg="light"  expand="lg">
+	<Navbar  bg="dark"  expand="lg">
 		<Navbar.Toggle  aria-controls="basic-navbar-nav"  />
 		<Navbar.Collapse  id="basic-navbar-nav">
 			<Nav  className="mr-auto">
-				<Link  to="/">Todos</Link>
-				<Link  style={{marginLeft: '10px'}}  to="/add-form">Add Todo</Link>
+				<Link  to="/">Selekta</Link>
 				{
 					props.user ? (
 						<button onClick={props.onLogOut}>Logout</button>

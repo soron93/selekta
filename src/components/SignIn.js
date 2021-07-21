@@ -12,7 +12,6 @@ function SignIn(props){
                 <input name="password" type="password" className="form-control" id="InputPassword" />
             </div>
             <button type="submit" className="btn btn-primary">Submit</button>
-<<<<<<< HEAD
             {/* {
                 props.error ? (
                     <p>{props.error}</p>
@@ -24,17 +23,6 @@ function SignIn(props){
 
             }  
 
-=======
-            {
-                props.error ? (
-                    <p>{props.error}</p>
-                ) : ''
-            }
-            {/* or do it this way to avaoid unnecessary else conditions */}
-            {
-                 props.error && <p>{props.error}</p>
-            }
->>>>>>> 3f999bd63df7f74437b006e80a8ca78d6ff7088a
         </form>
     )
 }
