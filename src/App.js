@@ -229,8 +229,8 @@ class App extends Component {
     }
 
 
+    // ❗
    
-
     return (
       <div >
           <MyNav user={this.state.user} onLogOut={this.handleLogOut} />
@@ -238,7 +238,7 @@ class App extends Component {
           <ChatBot />
         
           <Switch>
-            
+          
               
               <Route  path="/signin"  render={(routeProps) => {
                 return  <SignIn  error={this.state.myError} onSignIn={this.handleSignIn} {...routeProps}  />
