@@ -2,13 +2,13 @@ import { Switch, Route, withRouter } from "react-router-dom";
 import React, { Component } from 'react'
 import MyNav from './components/MyNav'
 import axios from 'axios'
-import TodoList from "./components/SpotifyList";
-import TodoDetail from "./components/SpotifyDetail";
+//import TodoList from "./components/SpotifyList";
+//import TodoDetail from "./components/SpotifyDetail";
 import SignIn from './components/SignIn'
 import SignUp from './components/SignUp'
 import {API_URL} from './config'
 import NotFound from "./components/NotFound";
-import ChatBot from "./components/ChatBot";
+//import ChatBot from "./components/ChatBot";
 import './App.css'
 import  'bootstrap/dist/css/bootstrap.min.css';
 import SliderMockUp from "./components/SliderMockUp";
@@ -145,8 +145,8 @@ class App extends Component {
       <div >
           <MyNav user={this.state.user} onLogOut={this.handleLogOut} />
 {/* 
-          <ChatBot /> */}
-        <SliderMockUp/>
+          <ChatBot />
+        <SliderMockUp/> */}
           <Switch>
           
               
@@ -164,10 +164,7 @@ class App extends Component {
                 return  <TestSal   />
               }}/>
 
-              <Route  path="/testemmy"  render={(routeProps) => {
-                return  <TestEmmy error={this.state.myError} {...routeProps}  />
-              }}/>
-
+               <TestEmmy />
 
           </Switch>
       </div>

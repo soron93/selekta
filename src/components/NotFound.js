@@ -6,7 +6,7 @@ class NotFound extends Component {
     render() {
         return (
             <div>
-                404 ! 
+                404! 
                 <LottieControl 
                     width={400}
                     height={400}
