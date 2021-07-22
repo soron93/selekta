@@ -11,7 +11,7 @@ import NotFound from "./components/NotFound";
 import ChatBot from "./components/ChatBot";
 import './App.css'
 import  'bootstrap/dist/css/bootstrap.min.css';
-
+import SliderMockUp from "./components/SliderMockUp";
 
 class App extends Component {
 
@@ -234,9 +234,9 @@ class App extends Component {
     return (
       <div >
           <MyNav user={this.state.user} onLogOut={this.handleLogOut} />
-
-          <ChatBot />
-        
+{/* 
+          <ChatBot /> */}
+        <SliderMockUp/>
           <Switch>
             
               
