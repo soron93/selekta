@@ -160,7 +160,7 @@ class App extends Component {
               <Route component={NotFound} />
 
               <Route  path="/testsal"  render={(routeProps) => {
-                return  <TestSal error={this.state.myError} {...routeProps}  />
+                return  <TestSal   />
               }}/>
 
               <Route  path="/testemmy"  render={(routeProps) => {
