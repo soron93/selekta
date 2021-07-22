@@ -59,7 +59,7 @@ export default function RangeSlider() {
 
 
 <Typography id="range-slider" gutterBottom>
-      liveness    
+      liveliness    
       </Typography>
       <Slider
         value={value}

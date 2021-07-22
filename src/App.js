@@ -2,7 +2,7 @@ import { Switch, Route, withRouter } from "react-router-dom";
 import React, { Component } from 'react'
 import MyNav from './components/MyNav'
 import axios from 'axios'
-import TodoList from "./components/SpotifyList";
+import TodoList from "./components/TodoList";
 import TodoDetail from "./components/SpotifyDetail";
 import SignIn from './components/SignIn'
 import SignUp from './components/SignUp'
@@ -12,29 +12,35 @@ import ChatBot from "./components/ChatBot";
 import './App.css'
 import  'bootstrap/dist/css/bootstrap.min.css';
 import SliderMockUp from "./components/SliderMockUp";
+import booksJson from './books.json';
+import Search from './components/Search';
+import {Paper, Grid} from '@material-ui/core';
+import Items from './components/Items';
 
 //TEST PAGES 
 import TestEmmy from './components/TestEmmy'
-import TestSal from './components/TestSal'
+import TestShade from './components/TestShade'
 
 
 class App extends Component {
 
   state = {
-    spotify: [],
+    todos: [],
     user: null,
     myError: null, 
     fetchingUser: true, 
+    books: booksJson,
+    filteredBooks: booksJson,
   }
 
  
   async componentDidMount(){
     try {
       // fetch all the initial todos to show on the home page
-        let response = await axios.get(`${API_URL}/api/spotify`, {withCredentials: true})
+        let response = await axios.get(`${API_URL}/api/todos`, {withCredentials: true})
         console.log(response.data)
         this.setState({
-          spotify: response.data
+          todos: response.data
         })
 
 
@@ -76,6 +82,14 @@ class App extends Component {
       console.log('Signup failed', err)
     }
   }
+
+
+  
+  componentDidUpdate(){
+    console.log('App was updated')
+  }
+  
+
 
   handleSignIn = async (event) => {
     event.preventDefault()
@@ -128,6 +142,27 @@ class App extends Component {
     }
   }
 
+
+
+
+  handleSearch = (event) => {
+    event.preventDefault()
+    let searchedBook = event.target.value
+    const {books} = this.state
+    let filteredBooks = books.filter((book)=>{
+      return book.title.toLowerCase().includes(searchedBook.toLowerCase())
+    }) 
+  
+    this.setState({
+      filteredBooks: filteredBooks
+    })
+  
+  }
+  
+
+
+
+
   render() {
     console.log('App props', this.props)
   
@@ -143,13 +178,35 @@ class App extends Component {
    
     return (
       <div >
-          <MyNav user={this.state.user} onLogOut={this.handleLogOut} />
-{/* 
-          <ChatBot /> */}
-        <SliderMockUp/>
+
+
+Selekta App
+<MyNav user={this.state.user} onLogOut={this.handleLogOut} />
+<Grid container spacing={3}>
+          <Grid item xs={6}>
+            <Paper >
+              <Search onSearch={this.handleSearch} />
+              <Items books={this.state.filteredBooks} 
+                handleAddTotal={this.handleAddTotal}
+                onAddNewBook={this.handleAddNewBook}
+        />
+            </Paper>
+          </Grid>
+          <Grid item xs={6}>
+            <Paper >
+
+            </Paper>
+          </Grid>
+        </Grid>
+        {/* <SliderMockUp/> */}
           <Switch>
           
-              
+              {/* <TestSal/> */}
+
+              <Route exact path={'/'}  render={() => {
+                return <TodoList  todos={this.state.todos} />
+              }} />
+
               <Route  path="/signin"  render={(routeProps) => {
                 return  <SignIn  error={this.state.myError} onSignIn={this.handleSignIn} {...routeProps}  />
               }}/>
@@ -158,16 +215,19 @@ class App extends Component {
                 return  <SignUp onSignUp={this.handleSignUp} {...routeProps}  />
               }}/>
               
-              <Route component={NotFound} />
+              
 
-              <Route  path="/testsal"  render={(routeProps) => {
-                return  <TestSal   />
-              }}/>
+              {/* <Route  exact path="/shade"  components={() => {
+                return  <TestShade onSearch={this.handleSearch} />
+              }}/> */}
+
+              <Route exact path="/shade" component={TestShade} />
 
               <Route  path="/testemmy"  render={(routeProps) => {
                 return  <TestEmmy error={this.state.myError} {...routeProps}  />
               }}/>
 
+                <Route component={NotFound} />
 
           </Switch>
       </div>

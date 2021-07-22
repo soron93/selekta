@@ -1,21 +1,26 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 
-class SpotifyList extends Component {
+class TodoList extends Component {
 
     
     render() {
-        const {spotify} = this.props
+        const {todos} = this.props
         
         return (
             <div>
-             
+                             {
+                    todos.map((todo, i) => {
+                        return <p key={i}>
+                            <Link to={`/todo/${todo._id}`}> {todo.name} </Link></p>
+                    })
+                }
             </div>
         )
     }
 }
 
-export default SpotifyList
+export default TodoList
 
 /*
 

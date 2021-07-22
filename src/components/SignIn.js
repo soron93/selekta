@@ -12,11 +12,11 @@ function SignIn(props){
                 <input name="password" type="password" className="form-control" id="InputPassword" />
             </div>
             <button type="submit" className="btn btn-primary">Submit</button>
-            {/* {
+            {
                 props.error ? (
                     <p>{props.error}</p>
                 ) : ''
-            } */}
+            }
 
             {
              props.error && <p>{props.error}</p>           

@@ -17,7 +17,7 @@ return (
 							<Link  style={{marginLeft: '10px'}}  to="/signin">SignIn</Link>
 							<Link  style={{marginLeft: '10px'}}  to="/signup">SignUp</Link>
 							<Link  style={{marginLeft: '10px'}}  to="/testemmy">Emmy </Link>
-							<Link  style={{marginLeft: '10px'}}  to="/testsal">Salvador</Link>
+							<Link  style={{marginLeft: '10px'}}  to="/shade">Shade</Link>
 						</>
 					)
 				}
