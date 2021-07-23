@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import SliderMockUp from "./SliderMockUp";
+
 
 class Selekta extends Component {
 
@@ -8,10 +10,18 @@ class Selekta extends Component {
         console.log('test this')
 
         return (
-            
+
             <div >
-                <h1>SELEKTA COMPONENT SHOWING</h1>
-               
+                <h1>SELEKTA SPLASH PAGE COMPONENT SHOWING</h1>
+                <p>
+                    <SliderMockUp />
+                </p>
+
+                <p>
+                    
+                </p>
+                
+
             </div>
 
 
