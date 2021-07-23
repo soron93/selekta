@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import SpotifyGetPlaylists from "./components/SpotifyGetPlaylists";
+import SpotifyGetPlaylists from "./SpotifyGetPlaylists";
 
 
 
