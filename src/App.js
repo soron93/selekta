@@ -15,7 +15,7 @@ import SliderMockUp from "./components/SliderMockUp";
 import booksJson from './books.json';
 import Search from './components/Search';
 import {Paper, Grid} from '@material-ui/core';
-import Items from './components/Items';
+
 
 //TEST PAGES 
 import TestEmmy from './components/TestEmmy'
@@ -29,8 +29,6 @@ class App extends Component {
     user: null,
     myError: null, 
     fetchingUser: true, 
-    books: booksJson,
-    filteredBooks: booksJson,
   }
 
  
@@ -82,14 +80,6 @@ class App extends Component {
       console.log('Signup failed', err)
     }
   }
-
-
-  
-  componentDidUpdate(){
-    console.log('App was updated')
-  }
-  
-
 
   handleSignIn = async (event) => {
     event.preventDefault()
@@ -186,10 +176,8 @@ Selekta App
           <Grid item xs={6}>
             <Paper >
               <Search onSearch={this.handleSearch} />
-              <Items books={this.state.filteredBooks} 
-                handleAddTotal={this.handleAddTotal}
-                onAddNewBook={this.handleAddNewBook}
-        />
+
+        
             </Paper>
           </Grid>
           <Grid item xs={6}>
@@ -215,19 +203,18 @@ Selekta App
                 return  <SignUp onSignUp={this.handleSignUp} {...routeProps}  />
               }}/>
               
-              
+              <Route component={NotFound} />
 
               {/* <Route  exact path="/shade"  components={() => {
                 return  <TestShade onSearch={this.handleSearch} />
               }}/> */}
 
-              <Route exact path="/shade" component={TestShade} />
+<Route exact path="/z/:id" component={SingleBeer} />
 
               <Route  path="/testemmy"  render={(routeProps) => {
                 return  <TestEmmy error={this.state.myError} {...routeProps}  />
               }}/>
 
-                <Route component={NotFound} />
 
           </Switch>
       </div>
