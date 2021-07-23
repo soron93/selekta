@@ -19,9 +19,9 @@ import Items from './components/Items';
 import { Credentials } from './components/Searchtest/Credentials';
 
 //TEST PAGES 
-// import TestEmmy from './components/TestEmmy'
+import TestEmmy from './components/TestEmmy'
 import TestShade from './components/TestShade'
-//import SearchTest from './components/SearchTest'
+import SearchTest from './components/SearchTest'
 import Random from './components/Random'
 import Profile from './components/Profile'
 import Selekta from './components/Selekta'
@@ -234,19 +234,17 @@ class App extends Component {
               <Route  path="/signup"  render={(routeProps) => {
                 return  <SignUp onSignUp={this.handleSignUp} {...routeProps}  />
               }}/>
-              
-              <Route component={NotFound} />
+     
 
-
-          {/* <Route  exact path="/shade"  components={() => {
+          <Route  exact path="/shade"  components={() => {
                 return  <TestShade onSearch={this.handleSearch} />
-              }}/> */}
+              }}/>
 
           <Route exact path="/shade" component={TestShade} />
 
-          {/* <Route path="/testemmy" render={(routeProps) => {
+          <Route path="/testemmy" render={(routeProps) => {
             return <TestEmmy error={this.state.myError} {...routeProps} />
-          }} /> */}
+          }} />
 
           <Route exact path="/random" component={Random} />
 

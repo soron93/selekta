@@ -3,7 +3,7 @@ import SliderMockUp from "./SliderMockUp";
 import { createMuiTheme, ThemeProvider } from '@material-ui/core';
 import AudioPlayer from 'material-ui-audio-player';
 
-const muiTheme = createMuiTheme({});
+// const muiTheme = createMuiTheme({});
 
 class TestEmmy extends Component {
 
@@ -25,7 +25,7 @@ class TestEmmy extends Component {
 
         <iframe src="https://open.spotify.com/embed?uri=spotify:album:1DFixLWuPkv3KT3TnV35m3" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
         
-        <ThemeProvider theme={muiTheme}>
+        {/* <ThemeProvider theme={muiTheme}>
           <AudioPlayer elevation={1}
     width="20%"
     variation="default"
@@ -38,7 +38,7 @@ class TestEmmy extends Component {
     src={"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" }
 
   /> 
-        </ThemeProvider>;
+        </ThemeProvider>; */}
 
 
       </div>
