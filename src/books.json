@@ -1,0 +1,22 @@
+[
+    {
+      "title": "You don't know JS",
+      "price": 15
+    },
+    {
+      "title": "Eloquent JS",
+      "price": 29.45
+    },
+    {
+      "title": "JS the good parts",
+      "price": 18.95
+    },
+    {
+      "title": "JS ninja",
+      "price": 17.68
+    },
+    {
+      "title": "Raw JavaScript",
+      "price": 17.11
+    }
+  ]

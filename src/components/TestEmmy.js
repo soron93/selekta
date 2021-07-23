@@ -1,18 +1,29 @@
 import React, { Component } from 'react'
-//import {Link} from 'react-router-dom'
+//import SliderMockUp from "./components/SliderMockUp";
 
-class TestEmmy extends Component {
 
-    
-    render() {
-       
-        
-        return (
-            <div>
-             test sal
-            </div>
-        )
-    }
+
+
+function TestEmmy() {
+
+  console.log('test emmy component')
+
+
+  return (
+
+    <div>
+     
+      <h1>EMMY COMPONENT SHOWING</h1>
+
+
+    </div>
+
+  )
+
 }
 
+
+
+
 export default TestEmmy
+
