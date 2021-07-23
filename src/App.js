@@ -18,6 +18,14 @@ import { Paper, Grid } from '@material-ui/core';
 import Items from './components/Items';
 import { Credentials } from './components/Searchtest/Credentials';
 
+//Spotify Search Engine
+import Tracks from "./components/SpotifyApi/Tracks";
+import Albums from './components/SpotifyApi/Albums';
+import Index from './components/SpotifyApi/Index';
+import ArtistSearch from './components/SpotifyApi/ArtistSearch'
+
+
+
 //TEST PAGES 
 import TestEmmy from './components/TestEmmy'
 import TestShade from './components/TestShade'
@@ -216,6 +224,31 @@ class App extends Component {
 
 
         <Switch>
+
+
+
+        {/* Spotify begin routes */}
+
+        <Route exact path={'/'} render={() => {
+            return <Index/>
+          }} />
+
+
+      <Route exact path={'/artist-search'} render={() => {
+            return <ArtistSearch/>
+          }} />
+
+      <Route exact path={'/albums/artistId'} render={() => {
+            return <Albums/>
+          }} />
+
+      <Route exact path={'/tracks/:albumId'} render={() => {
+            return <Tracks/>
+          }} />
+
+
+       {/* Spotify end routes */}
+
 
 
 
