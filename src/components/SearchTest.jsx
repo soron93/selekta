@@ -12,17 +12,22 @@ class Search extends Component {
             <div> <h1>SEARCH COMPONENT SHOWING</h1>
 
                 <p>
-                <SliderMockUp />
+                    <SliderMockUp />
                 </p>
 
                 <TextField onChange={onSearch}
                     id="standard-basic"
                     label="Selekt your music"
                     name="search" />
-              
-              <h4>Results</h4>
+
+                <p>
+                    <h4>Results</h4>
+
+                </p>
 
             </div>
+
+
         )
     }
 }
