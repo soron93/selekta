@@ -21,9 +21,11 @@ import { Credentials } from './components/Searchtest/Credentials';
 //TEST PAGES 
 import TestEmmy from './components/TestEmmy'
 import TestShade from './components/TestShade'
-import SearchTest from './components/SearchTest'
+//import SearchTest from './components/SearchTest'
 import Random from './components/Random'
 import Profile from './components/Profile'
+import Selekta from './components/Selekta'
+import SpotifyLogin from './components/SpotifyLogin/SpotifyLogin'
 
 class App extends Component {
 
@@ -210,15 +212,15 @@ class App extends Component {
             </Paper>
           </Grid>
         </Grid>
-        {/*  */}
+        {/*<SliderMockUp/>  */}
 
-        <SliderMockUp/>
+
         <Switch>
 
-          
+
 
           <Route exact path={'/'} render={() => {
-            return <TodoList todos={this.state.todos} />
+            return <Selekta/>
           }} />
 
           <Route path="/signin" render={(routeProps) => {
@@ -246,7 +248,7 @@ class App extends Component {
             return <TestEmmy error={this.state.myError} {...routeProps} />
           }} />
 
-          <Route exact path="/random" component={Random}/>
+          <Route exact path="/random" component={Random} />
 
           <Route path="/search" render={(routeProps) => {
             return <Search error={this.state.myError} {...routeProps} />
@@ -256,6 +258,10 @@ class App extends Component {
             return <Profile error={this.state.myError} {...routeProps} />
           }} />
 
+
+          <Route path="/spotifylogin" render={(routeProps) => {
+            return <SpotifyLogin error={this.state.myError} {...routeProps} />
+          }} />
 
 
           <Route component={NotFound} />

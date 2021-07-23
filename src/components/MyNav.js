@@ -23,6 +23,7 @@ return (
 							<Link  style={{marginLeft: '10px'}}  to="/random">Random</Link>
 							<Link  style={{marginLeft: '10px'}}  to="/search">Search</Link>
 							<Link  style={{marginLeft: '10px'}}  to="/profile">Profile</Link>
+							<Link  style={{marginLeft: '10px'}}  to="/spotifylogin">Spotify Login</Link>
 						</>
 					)
 				}
