@@ -19,7 +19,7 @@ import Items from './components/Items';
 import { Credentials } from './components/Searchtest/Credentials';
 
 //TEST PAGES 
-import TestEmmy from './components/TestEmmy'
+// import TestEmmy from './components/TestEmmy'
 import TestShade from './components/TestShade'
 //import SearchTest from './components/SearchTest'
 import Random from './components/Random'
@@ -244,9 +244,9 @@ class App extends Component {
 
           <Route exact path="/shade" component={TestShade} />
 
-          <Route path="/testemmy" render={(routeProps) => {
+          {/* <Route path="/testemmy" render={(routeProps) => {
             return <TestEmmy error={this.state.myError} {...routeProps} />
-          }} />
+          }} /> */}
 
           <Route exact path="/random" component={Random} />
 
