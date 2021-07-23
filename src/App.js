@@ -13,15 +13,10 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SliderMockUp from "./components/SliderMockUp";
 import booksJson from './books.json';
-<<<<<<< HEAD
-import Search from './components/Search';
-import {Paper, Grid} from '@material-ui/core';
-
-=======
 import Search from './components/SearchTest';
 import { Paper, Grid } from '@material-ui/core';
 import Items from './components/Items';
->>>>>>> 78d16503f1a6bfa7a45e2d6eb2797b76a70bc9b8
+import { Credentials } from './components/Searchtest/Credentials';
 
 //TEST PAGES 
 import TestEmmy from './components/TestEmmy'
@@ -35,16 +30,13 @@ class App extends Component {
   state = {
     todos: [],
     user: null,
-<<<<<<< HEAD
-    myError: null, 
-    fetchingUser: true, 
-=======
     myError: null,
     fetchingUser: true,
     books: booksJson,
     filteredBooks: booksJson,
->>>>>>> 78d16503f1a6bfa7a45e2d6eb2797b76a70bc9b8
   }
+
+
 
 
   async componentDidMount() {
@@ -73,6 +65,16 @@ class App extends Component {
     }
   }
 
+  handleCredentials = async (event) => {
+  event.preventDefault()
+  const spotify = Credentials();
+  console.log('RENDERING APP.JS')
+  }
+
+  
+
+
+
 
   handleSignUp = async (event) => {
     event.preventDefault()
@@ -96,8 +98,6 @@ class App extends Component {
     }
   }
 
-<<<<<<< HEAD
-=======
 
 
   componentDidUpdate() {
@@ -106,7 +106,6 @@ class App extends Component {
 
 
 
->>>>>>> 78d16503f1a6bfa7a45e2d6eb2797b76a70bc9b8
   handleSignIn = async (event) => {
     event.preventDefault()
     console.log('Sign in works!!!! Yippeeee')
@@ -199,15 +198,10 @@ class App extends Component {
           <Grid item xs={6}>
             <Paper >
               <Search onSearch={this.handleSearch} />
-<<<<<<< HEAD
-
-        
-=======
               <Items books={this.state.filteredBooks}
                 handleAddTotal={this.handleAddTotal}
                 onAddNewBook={this.handleAddNewBook}
               />
->>>>>>> 78d16503f1a6bfa7a45e2d6eb2797b76a70bc9b8
             </Paper>
           </Grid>
           <Grid item xs={6}>
@@ -235,23 +229,17 @@ class App extends Component {
             return <SignUp onSignUp={this.handleSignUp} {...routeProps} />
           }} />
 
-<<<<<<< HEAD
               <Route  path="/signup"  render={(routeProps) => {
                 return  <SignUp onSignUp={this.handleSignUp} {...routeProps}  />
               }}/>
               
               <Route component={NotFound} />
-=======
->>>>>>> 78d16503f1a6bfa7a45e2d6eb2797b76a70bc9b8
 
 
           {/* <Route  exact path="/shade"  components={() => {
                 return  <TestShade onSearch={this.handleSearch} />
               }}/> */}
 
-<<<<<<< HEAD
-<Route exact path="/z/:id" component={SingleBeer} />
-=======
           <Route exact path="/shade" component={TestShade} />
 
           <Route path="/testemmy" render={(routeProps) => {
@@ -268,13 +256,9 @@ class App extends Component {
             return <Profile error={this.state.myError} {...routeProps} />
           }} />
 
->>>>>>> 78d16503f1a6bfa7a45e2d6eb2797b76a70bc9b8
 
 
-<<<<<<< HEAD
-=======
           <Route component={NotFound} />
->>>>>>> 78d16503f1a6bfa7a45e2d6eb2797b76a70bc9b8
 
         </Switch>
       </div>
