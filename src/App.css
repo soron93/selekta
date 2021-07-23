@@ -38,6 +38,8 @@
   }
 }
 
+@use "@material/slider/styles";
+
 /* .slidecontainer {
   display: flex;
   flex-direction: column;

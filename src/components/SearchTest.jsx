@@ -6,7 +6,7 @@ class Search extends Component {
 
     const { onSearch } = this.props
     return(
-        <div>
+        <div> <h1>SEARCH COMPONENT SHOWING</h1>
             <TextField onChange={onSearch}
                 id="standard-basic"
                 label="Selekt your music"
