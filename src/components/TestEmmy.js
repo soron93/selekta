@@ -1,27 +1,32 @@
 import React, { Component } from 'react'
-//import SliderMockUp from "./components/SliderMockUp";
+import SliderMockUp from "./SliderMockUp";
 
 
+class TestEmmy extends Component {
 
-
-function TestEmmy() {
-
-  console.log('test emmy component')
-
-
-  return (
-
-    <div>
+    
+  render() {
      
-      <h1>EMMY COMPONENT SHOWING</h1>
+    console.log('test emmy component')
 
+          
+      return (
+          
+        <div>
+     
+        <h1>EMMY COMPONENT SHOWING</h1>
+        {/* */}
+        <p>
+        <SliderMockUp/> 
+        </p>
+  
+      </div>
 
-    </div>
-
-  )
-
+          
+        
+      )
+  }
 }
-
 
 
 
