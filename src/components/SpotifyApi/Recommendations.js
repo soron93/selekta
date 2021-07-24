@@ -1,3 +1,5 @@
+//GOAL -  Get Recommendations based on audio features to use with the Toggle  
+
 //GET https://api.spotify.com/v1/recommendations
 
 /*

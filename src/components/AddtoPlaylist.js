@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Button, TextField } from '@material-ui/core';
 
-class AddForm extends Component {
+class AddtoPlaylist extends Component {
 
    
 
@@ -12,4 +12,4 @@ class AddForm extends Component {
     }
 }
 
-export default AddForm
+export default AddtoPlaylist

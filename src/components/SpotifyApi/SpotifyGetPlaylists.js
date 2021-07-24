@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+//GOAL -  GET USER PLAYLIST FROM SPOTIFY
+
 const PLAYLISTS_ENDPOINT = "https://api.spotify.com/v1/me/playlists";  //end point to get the playlist
 
 const SpotifyGetPlaylists = () => {

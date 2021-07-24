@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+//GOAL - SEARCH FEATURE TRACKS 
+
 /*EXAMPLE GET REQUEST FOR SEVERAL TRACKS US MARKET  ????
 curl -X "GET" "https://api.spotify.com/v1/tracks?ids=3n3Ppam7vgaVa1iaRUc9Lp%2C3twNvmDtFQtAd5gMKedhLD&market=United%20States" -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer BQAAWHajQQSypwWw3xJiDppcxfJtW4izBeFoOJVvyVw6fvZq2PmxAgJhtigPo8xR_48AgWLO7LfCh_I5qAp5FWMQZJNjFDRUP2JqETpFzHRyo2sDk1BnvIjSAFRJj8FPzzfWS7mBHi3gteIeS-ECDpQ" */
 

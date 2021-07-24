@@ -112,18 +112,17 @@ function SignIn(props) {
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
+              <p><p>
+                  <SpotifyLogin />
+                </p></p>  
               </Grid>
               <Grid item>
-                <Link href="/signup" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
-                <p><p>
-                  <SpotifyLogin />
-                </p></p>
+              
+                
               </Grid>
+              <Link href="/signup" variant="body2">
+                  {"Need an account? Sign Up"}
+                </Link>
             </Grid>
             <Box mt={5}>
               <Copyright />

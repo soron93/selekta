@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
+//GOAL -GENERATE A LIST BASED ON  USER CRITERIA --- NPM PACKAGE  https://github.com/epsil/spotgen
+ 
 //API CALL  GET https://api.spotify.com/v1/browse/new-releases 
 //example axios request below  + with access
 /*
@@ -13,7 +15,7 @@ This endpoint requires authentication, but does not require a specific scope.
 
 */
 
-const NewReleases = () => {
+const GenerateList = () => {
 
 	// Set up states for retrieving access token and top tracks
 	const [token, setToken] = useState('');  //first get this
@@ -58,4 +60,4 @@ const NewReleases = () => {
 }
 
 
-export default NewReleases
+export default GenerateList
