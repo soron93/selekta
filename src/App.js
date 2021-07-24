@@ -21,7 +21,7 @@ import { Credentials } from './components/Searchtest/Credentials';
 //Spotify Search Engine
 import Tracks from "./components/SpotifyApi/Tracks";
 import Albums from './components/SpotifyApi/Albums';
-import Index from './components/SpotifyApi/Index';
+//import Index from './components/SpotifyApi/Index';
 import ArtistSearch from './components/SpotifyApi/ArtistSearch'
 
 
@@ -230,7 +230,7 @@ class App extends Component {
         {/* Spotify begin routes */}
 
         <Route exact path={'/'} render={() => {
-            return <Index/>
+            return <Selekta/>
           }} />
 
 
@@ -251,10 +251,6 @@ class App extends Component {
 
 
 
-
-          <Route exact path={'/'} render={() => {
-            return <Selekta/>
-          }} />
 
           <Route path="/signin" render={(routeProps) => {
             return <SignIn error={this.state.myError} onSignIn={this.handleSignIn} {...routeProps} />

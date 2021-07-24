@@ -3,8 +3,9 @@ import SliderMockUp from "./SliderMockUp";
 import { createMuiTheme, ThemeProvider } from '@material-ui/core';
 import AudioPlayer from 'material-ui-audio-player';
 import SpotifyButton from "./Individual/SpotifyButton";
-import Plotly from "./Plotly/Plotly";
+//import Plotly from "./Plotly/Plotly";
 // const muiTheme = createMuiTheme({});
+import SearchTest from "./SearchTest"
 
 class TestEmmy extends Component {
 
@@ -20,7 +21,7 @@ class TestEmmy extends Component {
 
         <h1>EMMY COMPONENT SHOWING</h1>
         <p>
-          <Plotly />
+          <SearchTest />
         </p>
 
         {/* */}

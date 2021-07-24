@@ -49,26 +49,27 @@ const Random = () => {
     if (localStorage.getItem("accessToken")) { // from get return params spotify auth
       setToken(localStorage.getItem("accessToken"));// gets the token from the local storage  
     }
-  }, []);
+  }, []); // locally storing the token from spotify here is the problem ??? IDK
 
   const handleGetPlaylists = () => {
     axios
       .get(ENDPOINT, {
-        headers: {
+        headers: { // an axios property 
           Authorization: "Bearer " + token,
         },
       })
       .then((response) => {
-        setData(response.data);
+        setData(response.data); // use state function up there 
       })
       .catch((error) => {
         console.log(error);
       });
   };
 
-  return (
+  //button to handle getting the random track  option chain using data map below 
+  return (  
     <>
-      <button onClick={handleGetPlaylists}>Get Random</button>
+      <button onClick={handleGetPlaylists}>Get Random</button> 
       {data?.items ? data.items.map((item) => <p>{item.name}</p>) : null}
     </>
   );

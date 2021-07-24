@@ -1,9 +1,16 @@
 # ISSUES
-- Fix and connect Toggle
+- Fix bug and connect Toggle 
+- Define All of the Toggles and connect to API
 - Display New Releases
 - Seeded the data base in correctly 
 - Unable to randomize how to insert the dynamice genre  and return a track
 - Getting playlist not working
+
+# ISSUES - NO HELP NEEDED 
+- Make pages private accordingly 
+- Style PLaylist Save
+- Style the Nav
+
 
 # Selekta
 

@@ -19,13 +19,9 @@ const NewReleases = () => {
 	const [token, setToken] = useState('');  //first get this
 	const [tracks, setTracks] = useState([]);
 
-	// Artist ID from Spotify
-	const id = '06HL4z0CvFAxyc27GXpf02';
-	const market = 'US';
-
 	useEffect(()=>{
 
-		// Api call for retrieving token
+	
 		axios('https://accounts.spotify.com/api/token', { // enpoint for access token send the post req  you need client id and secret 
         
 			'method': 'POST',
