@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+/*import React, { Component } from 'react'
 import { Button, TextField } from '@material-ui/core';
 
 
@@ -26,4 +26,4 @@ class ItemDetail extends Component {
 }
 
 
-export default ItemDetail
+export default ItemDetail*/

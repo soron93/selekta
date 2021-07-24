@@ -1,3 +1,10 @@
+# ISSUES
+- Fix and connect Toggle
+- Display New Releases
+- Seeded the data base in correctly 
+- Unable to randomize how to insert the dynamice genre  and return a track
+- Getting playlist not working
+
 # Selekta
 
 <br>

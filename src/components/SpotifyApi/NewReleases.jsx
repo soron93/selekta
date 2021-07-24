@@ -2,7 +2,16 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 //API CALL  GET https://api.spotify.com/v1/browse/new-releases 
+//example axios request below  + with access
+/*
+  with limit added and offset ??? 
+curl -X "GET" "https://api.spotify.com/v1/browse/new-releases?limit=10&offset=3" -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer "
 
+
+Select scopes
+This endpoint requires authentication, but does not require a specific scope.
+
+*/
 
 const NewReleases = () => {
 
@@ -30,7 +39,7 @@ const NewReleases = () => {
 			setToken(tokenresponse.data.access_token);
 
 			// Api call for retrieving tracks data
-			axios(`https://api.spotify.com/v1/artists/${id}/top-tracks?market=${market}`,{
+			axios(`https://api.spotify.com/v1/browse/new-releases?limit=10&offset=3`,{
 				'method': 'GET',
 				'headers': {
 					'Content-Type': 'application/json',
@@ -44,24 +53,6 @@ const NewReleases = () => {
 		}).catch(error => console.log(error));
 	},[])
 
-	// Transform track data 
-	function PopularityByTrack(data){
-
-		let plotData = [];
-
-		let names = [];
-		let popularity = [];
-
-		data.map(each => {
-			names.push(each.name);
-			popularity.push(each.popularity);
-		})
-
-		plotData['names'] = names;
-		plotData['popularity'] = popularity;
-
-		return plotData;
-	}
 
 	return(
 		<div>

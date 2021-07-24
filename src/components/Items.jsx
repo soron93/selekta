@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+/*import React, { Component } from 'react'
 import AddForm from './AddForm'
 import ItemDetail from './ItemDetail'
 
@@ -53,8 +53,7 @@ class Items extends Component {
             <div>
                 List
 
-                {/* condintional rendering with ternaries */}
-
+              
                 {
 
                     showForm ? <AddForm onAddBook={this.handleAddBook} /> : <button onClick={this.handleClick}>Show Form</button>
@@ -78,4 +77,4 @@ class Items extends Component {
     }
 }
 
-export default Items
+export default Items*/
