@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Container from "@material-ui/core/Container";
+
 //import SpotifyToken from '../SpotifyLogin/SpotifyLogin'
 
 /*// EXAMPLE FROM STACK OVER FLOW
+
+how to??? genre list can come from 3rd model in mongo
+Combine a random genre with search ... pass the  random genre dynamically in the seach 
+
 REFERENCE
 https://developer.spotify.com/documentation/web-api/reference/#category-search
 
@@ -14,7 +20,6 @@ q=lil%20genre:%22southern%20hip%20hop%22&type=artist.
 
 https://api.spotify.com/v1/search?q=bob%20year:2014&type=album
 
-TODO Combine a random genre with search ... pass the  random genre dynamically in the seach 
 
 LIST OF GENRES   4367 lines 
 https://everynoise.com/everynoise1d.cgi?scope=all&vector=popularity
@@ -69,8 +74,9 @@ const Random = () => {
   //button to handle getting the random track  option chain using data map below 
   return (  
     <>
-      <button onClick={handleGetPlaylists}>Get Random</button> 
-      {data?.items ? data.items.map((item) => <p>{item.name}</p>) : null}
+  <Container maxWidth="sm">  <button onClick={handleGetPlaylists}>Get Random</button> 
+      {data?.items ? data.items.map((item) => <p>{item.name}</p>) : null}</Container>
+    
     </>
   );
 };

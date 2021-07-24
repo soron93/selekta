@@ -124,6 +124,7 @@ function SignUp(props){
             </Grid>
           </Grid>
         </form>
+        
       </div>
       <Box mt={5}>
         <Copyright />

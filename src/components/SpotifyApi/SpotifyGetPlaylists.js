@@ -29,6 +29,7 @@ const SpotifyGetPlaylists = () => {
   };
 
   return (
+    
     <>
       <button onClick={handleGetPlaylists}>Get Playlists</button>
       {data?.items ? data.items.map((item) => <p>{item.name}</p>) : null}

@@ -1,35 +1,34 @@
-import React, { Component } from 'react'
-import { TextField } from '@material-ui/core';
-import SliderMockUp from "./SliderMockUp";
-
-
+import React, { Component } from "react";
+import { TextField } from "@material-ui/core";
+import Slider from "./Individual/Slider";
+import Container from "@material-ui/core/Container";
 
 class Search extends Component {
-    render() {
+  render() {
+    const { onSearch } = this.props;
+    return (
+      <div>
+        <Container maxWidth="sm">
+          <h1>SEARCH COMPONENT SHOWING</h1>
 
-        const { onSearch } = this.props
-        return (
-            <div> <h1>SEARCH COMPONENT SHOWING</h1>
+          <p>
+            <Slider />
+          </p>
 
-                <p>
-                    <SliderMockUp />
-                </p>
+          <TextField
+            onChange={onSearch}
+            id="standard-basic"
+            label="Selekt your music"
+            name="search"
+          />
 
-                <TextField onChange={onSearch}
-                    id="standard-basic"
-                    label="Selekt your music"
-                    name="search" />
-
-                <p>
-                    <h4>Results</h4>
-
-                </p>
-
-            </div>
-
-
-        )
-    }
+          <p>
+            <h4>Results</h4>
+          </p>
+        </Container>
+      </div>
+    );
+  }
 }
 
-export default Search
+export default Search;

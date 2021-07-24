@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import SliderMockUp from "./SliderMockUp";
+//import SliderMockUp from "./SliderMockUp";
 import Slider from "../components/Individual/Slider";
 //import { createMuiTheme, ThemeProvider } from '@material-ui/core';
 //import AudioPlayer from 'material-ui-audio-player';
@@ -27,9 +27,7 @@ class TestEmmy extends Component {
           </p>
 
           {/* */}
-          <p>
-            <SliderMockUp />
-          </p>
+         
 
           <iframe
             src="https://open.spotify.com/embed?uri=spotify:album:1DFixLWuPkv3KT3TnV35m3"
