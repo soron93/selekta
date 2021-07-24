@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 import SliderMockUp from "./SliderMockUp";
 import Slider from "../components/Individual/Slider";
 //import { createMuiTheme, ThemeProvider } from '@material-ui/core';
@@ -6,38 +6,45 @@ import Slider from "../components/Individual/Slider";
 import SpotifyButton from "./Individual/SpotifyButton";
 //import Plotly from "./Plotly/Plotly";
 // const muiTheme = createMuiTheme({});
-import SearchTest from "./SearchTest"
+//import SearchTest from "./SearchTest";
+//import CssBaseline from "@material-ui/core/CssBaseline";
+//import Box from "@material-ui/core/Box";
+import Container from "@material-ui/core/Container";
 
 class TestEmmy extends Component {
-
-
   render() {
-
-    console.log('test emmy component')
-
+    console.log("test emmy component");
 
     return (
-
       <div>
+        {" "}
+        <Container maxWidth="sm">
+          <h1>EMMY COMPONENT SHOWING</h1>
+          <p>
+            <p>
+              <Slider />
+            </p>
+          </p>
 
-        <h1>EMMY COMPONENT SHOWING</h1>
-        <p>
-        <p>
-          <Slider/>
-        </p>
+          {/* */}
+          <p>
+            <SliderMockUp />
+          </p>
 
-        </p>
+          <iframe
+            src="https://open.spotify.com/embed?uri=spotify:album:1DFixLWuPkv3KT3TnV35m3"
+            width="300"
+            height="380"
+            frameborder="0"
+            allowtransparency="true"
+            allow="encrypted-media"
+          ></iframe>
 
-        {/* */}
-        <p>
-          <SliderMockUp />
-        </p>
+          <p>
+            <SpotifyButton />
+          </p>
 
-        <iframe src="https://open.spotify.com/embed?uri=spotify:album:1DFixLWuPkv3KT3TnV35m3" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-
-        <p><SpotifyButton/></p>
-        
-        {/* <ThemeProvider theme={muiTheme}>
+          {/* <ThemeProvider theme={muiTheme}>
           <AudioPlayer elevation={1}
     width="20%"
     variation="default"
@@ -51,17 +58,10 @@ class TestEmmy extends Component {
 
   /> 
         </ThemeProvider>; */}
-
-
+        </Container>
       </div>
-
-
-
-    )
+    );
   }
 }
 
-
-
-export default TestEmmy
-
+export default TestEmmy;

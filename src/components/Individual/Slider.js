@@ -35,16 +35,25 @@ const marks2 = [
     },
   ];
   
-
+  const marks4 = [
+    {
+      value: 0,
+      label: 'Local',
+    },
+    {
+      value: 100,
+      label: 'World Famous',
+    },
+  ];
 
 function valuetext(value) {
-  return `${value}°C`;
+  return `${value}`;
 }
 
 const minDistance = 10;
 
 export default function MinimumDistanceSlider() {
-  const [value1, setValue1] = React.useState([20, 37]);
+  const [value1, setValue1] = React.useState([40, 60]);
 
   const handleChange1 = (event, newValue, activeThumb) => {
     if (!Array.isArray(newValue)) {
@@ -58,7 +67,7 @@ export default function MinimumDistanceSlider() {
     }
   };
 
-  const [value2, setValue2] = React.useState([20, 37]);
+  const [value2, setValue2] = React.useState([40, 60]);
 
   const handleChange2 = (event, newValue, activeThumb) => {
     if (!Array.isArray(newValue)) {
@@ -77,6 +86,44 @@ export default function MinimumDistanceSlider() {
       setValue2(newValue);
     }
   };
+  const [value3, setValue3] = React.useState([40, 60]);
+  const handleChange3 = (event, newValue, activeThumb) => {
+    if (!Array.isArray(newValue)) {
+      return;
+    }
+
+    if (newValue[1] - newValue[0] < minDistance) {
+      if (activeThumb === 0) {
+        const clamped = Math.min(newValue[0], 100 - minDistance);
+        setValue3([clamped, clamped + minDistance]);
+      } else {
+        const clamped = Math.max(newValue[1], minDistance);
+        setValue3([clamped - minDistance, clamped]);
+      }
+    } else {
+      setValue3(newValue);
+    }
+  };
+
+  const [value4, setValue4] = React.useState([40, 60]);
+  const handleChange4 = (event, newValue, activeThumb) => {
+    if (!Array.isArray(newValue)) {
+      return;
+    }
+
+    if (newValue[1] - newValue[0] < minDistance) {
+      if (activeThumb === 0) {
+        const clamped = Math.min(newValue[0], 100 - minDistance);
+        setValue4([clamped, clamped + minDistance]);
+      } else {
+        const clamped = Math.max(newValue[1], minDistance);
+        setValue4([clamped - minDistance, clamped]);
+      }
+    } else {
+      setValue4(newValue);
+    }
+  };
+
 
 
 
@@ -102,12 +149,21 @@ export default function MinimumDistanceSlider() {
       />
           <Slider
         getAriaLabel={() => 'Minimum distance shift'}
-        value={value2}
-        onChange={handleChange2}
+        value={value3}
+        onChange={handleChange3}
         valueLabelDisplay="auto"
         getAriaValueText={valuetext}
         disableSwap
         marks={marks3}
+      />
+         <Slider
+        getAriaLabel={() => 'Minimum distance shift'}
+        value={value4}
+        onChange={handleChange4}
+        valueLabelDisplay="auto"
+        getAriaValueText={valuetext}
+        disableSwap
+        marks={marks4}
       />
     </Box>
 
