@@ -9,7 +9,7 @@ const SearchTest = () => {
 
   const spotify = Credentials();  
 
-  console.log('RENDERING APP.JS');
+  console.log('RENDERING Search Avery YT');
 
   const data = [
     {value: 1, name: 'A'},

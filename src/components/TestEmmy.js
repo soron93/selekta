@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import SliderMockUp from "./SliderMockUp";
 import { createMuiTheme, ThemeProvider } from '@material-ui/core';
 import AudioPlayer from 'material-ui-audio-player';
-
+import SpotifyButton from "./Individual/SpotifyButton";
 // const muiTheme = createMuiTheme({});
 
 class TestEmmy extends Component {
@@ -24,6 +24,8 @@ class TestEmmy extends Component {
         </p>
 
         <iframe src="https://open.spotify.com/embed?uri=spotify:album:1DFixLWuPkv3KT3TnV35m3" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+        <p><SpotifyButton/></p>
         
         {/* <ThemeProvider theme={muiTheme}>
           <AudioPlayer elevation={1}
