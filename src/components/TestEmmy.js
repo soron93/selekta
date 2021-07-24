@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import SliderMockUp from "./SliderMockUp";
-import { createMuiTheme, ThemeProvider } from '@material-ui/core';
-import AudioPlayer from 'material-ui-audio-player';
+import Slider from "../components/Individual/Slider";
+//import { createMuiTheme, ThemeProvider } from '@material-ui/core';
+//import AudioPlayer from 'material-ui-audio-player';
 import SpotifyButton from "./Individual/SpotifyButton";
 //import Plotly from "./Plotly/Plotly";
 // const muiTheme = createMuiTheme({});
@@ -21,7 +22,10 @@ class TestEmmy extends Component {
 
         <h1>EMMY COMPONENT SHOWING</h1>
         <p>
-          <SearchTest />
+        <p>
+          <Slider/>
+        </p>
+
         </p>
 
         {/* */}

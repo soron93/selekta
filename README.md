@@ -5,6 +5,7 @@
 - Seeded the data base in correctly 
 - Unable to randomize how to insert the dynamice genre  and return a track
 - Getting playlist not working
+- Get tracks 
 
 # ISSUES - NO HELP NEEDED 
 - Make pages private accordingly 
