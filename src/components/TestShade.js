@@ -10,9 +10,10 @@ class TestShade extends Component {
             
         return (
             
-            <div class="slidecontainer">
-            <h5>danceability</h5>
-            <input type="range" min="1" max="100" value="50" class="slider" id="myRange"></input>
+            
+            <div>
+            {/* <h5>danceability</h5>
+            <input type="range" min="1" max="100" value="50" class="slider" id="myRange"></input> */}
             </div>
             
           

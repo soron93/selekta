@@ -1,5 +1,5 @@
-// import React, { Component } from 'react'
-// import { Link } from 'react-router-dom'
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 //GOAL - SEARCH FEATURE BY ARTIST
 
@@ -16,4 +16,4 @@ class ArtistSearch extends Component {
         )
     }
 }
-// export default ArtistSearch
+export default ArtistSearch

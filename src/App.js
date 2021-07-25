@@ -2,8 +2,8 @@ import { Switch, Route, withRouter } from "react-router-dom";
 import React, { Component } from 'react'
 import MyNav from './components/MyNav'
 import axios from 'axios'
-//import TodoList from "./components/TodoList";
-//import TodoDetail from "./components/SpotifyDetail";
+import TodoList from "./components/TodoList";
+import TodoDetail from "./components/SpotifyDetail";
 import SignIn from './components/SignIn'
 import SignUp from './components/SignUp'
 import { API_URL } from './config'
@@ -11,17 +11,17 @@ import NotFound from "./components/NotFound";
 //import ChatBot from "./components/ChatBot";
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-//import SliderMockUp from "./components/SliderMockUp";
+// import SliderMockUp from "./components/SliderMockUp";
 import booksJson from './books.json';
 import Search from './components/SearchTest';
 import { Paper, Grid } from '@material-ui/core';
-//import Items from './components/Items';
+import Items from './components/Items';
 import { Credentials } from './components/Searchtest/Credentials';
 
 //Spotify Search Engine
 import Tracks from "./components/SpotifyApi/Tracks";
 import Albums from './components/SpotifyApi/Albums';
-//import Index from './components/SpotifyApi/Index';
+import Index from './components/SpotifyApi/Index';
 import ArtistSearch from './components/SpotifyApi/ArtistSearch'
 
 
@@ -230,11 +230,11 @@ class App extends Component {
         {/* SpotifyApi begin routes */}
 
         <Route exact path={'/'} render={() => {
-            return <Selekta/>
+            return <Index/>
           }} />
 
 
-      <Route exact path={'/artist-search'} render={() => {
+      <Route exact path={'/artist-search'} render={(routeProps) => {
             return <ArtistSearch/>
           }} />
 
@@ -251,6 +251,10 @@ class App extends Component {
 
 
 
+
+          <Route exact path={'/'} render={() => {
+            return <Selekta/>
+          }} />
 
           <Route path="/signin" render={(routeProps) => {
             return <SignIn error={this.state.myError} onSignIn={this.handleSignIn} {...routeProps} />
