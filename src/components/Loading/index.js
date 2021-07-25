@@ -1,3 +1,4 @@
+import { Event } from "jquery";
 import React from "react";
 import "./Loading.css";
 
@@ -10,6 +11,7 @@ const LoadingComponent = () => {
         <div className="bounce3"></div>
       </div>
     </div>
+    
   );
 };
 

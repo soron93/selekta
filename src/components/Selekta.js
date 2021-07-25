@@ -5,6 +5,7 @@ import { Button } from "@material-ui/core";
 //import Box from '@material-ui/core/Box';
 import Container from "@material-ui/core/Container";
 
+
 class Selekta extends Component {
   render() {
     console.log("test this");
@@ -18,9 +19,9 @@ class Selekta extends Component {
           </p>
           <p>
             <h4>Generate your personalized playlist</h4>
-            <Button type="submit" variant="contained" color="primary">
+            <a  href="/signin"><Button type="submit" variant="contained" color="primary">
               Start Selekting
-            </Button>
+            </Button></a>
           </p>
         </Container>
       </div>
