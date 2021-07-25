@@ -227,7 +227,7 @@ class App extends Component {
 
 
 
-        {/* Spotify begin routes */}
+        {/* SpotifyApi begin routes */}
 
         <Route exact path={'/'} render={() => {
             return <Index/>
@@ -247,7 +247,7 @@ class App extends Component {
           }} />
 
 
-       {/* Spotify end routes */}
+       {/* SpotifyApi end routes */}
 
 
 
