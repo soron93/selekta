@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+//GOAL - SEARCH FEATURE ALBUMS BY ARTIST ????
 class Albums extends Component {
     render() {
 

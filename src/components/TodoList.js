@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+/*import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 
 class TodoList extends Component {
@@ -20,5 +20,5 @@ class TodoList extends Component {
     }
 }
 
-export default TodoList
+export default TodoList*/
 

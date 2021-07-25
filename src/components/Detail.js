@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 
 const Detail = ({album, artists, name}) => {
 
@@ -24,4 +24,4 @@ const Detail = ({album, artists, name}) => {
     );
 }
 
-export default Detail;
+export default Detail;*/

@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import { TextField } from "@material-ui/core";
 import Slider from "./Individual/Slider";
+import SliderTime from "./Individual/Slider";
 import Container from "@material-ui/core/Container";
+import Toggle from "./Individual/Toggle";
+import SpotifyButton from "./Individual/SpotifyButton";
 
 class Search extends Component {
   render() {
@@ -9,22 +12,33 @@ class Search extends Component {
     return (
       <div>
         <Container maxWidth="sm">
-          <h1>SEARCH COMPONENT SHOWING</h1>
+          <h1>SAVE PLAYLIST COMPONENT SHOWING</h1>
 
           <p>
-            <Slider />
+            <h4>Results list of songs from generated playlist goes here</h4>
           </p>
-
+          <p>
           <TextField
             onChange={onSearch}
             id="standard-basic"
-            label="Selekt your music"
-            name="search"
+            label="Name Your Playlist"
+            name="Save"
           />
+        </p>
+          <p>
+            <SliderTime />
+          </p>
+          <p>
+            <Toggle />
+          </p>
 
           <p>
-            <h4>Results</h4>
+            Save to <SpotifyButton />
           </p>
+
+
+
+
         </Container>
       </div>
     );

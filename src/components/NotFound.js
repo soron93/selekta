@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import LottieControl from './LottieControl'
+import LottieControl from './Loading/LottieControl'
 import notFound from '../animation/notFound.json'
 
 class NotFound extends Component {
