@@ -4,44 +4,44 @@ import Slider from '@material-ui/core/Slider';
 
 const marks1 = [
   {
-    value: 0,
+    value: 0.0,
     label: 'Chilling',
   },
   {
-    value: 100,
+    value: 1.0,
     label: 'At the Club',
   },
 ];
 
 const marks2 = [
     {
-      value: 0,
+      value: 0.0,
       label: 'Analog',
     },
     {
-      value: 100,
+      value: 1.0,
       label: 'Digital',
     },
   ];
   
   const marks3 = [
     {
-      value: 0,
+      value: 0.0,
       label: 'No Talking',
     },
     {
-      value: 100,
+      value: 1.0,
       label: 'Mad Vocals',
     },
   ];
   
   const marks4 = [
     {
-      value: 0,
+      value: 0.0,
       label: 'Local',
     },
     {
-      value: 100,
+      value: 1.0,
       label: 'World Famous',
     },
   ];
@@ -53,7 +53,7 @@ function valuetext(value) {
 const minDistance = 10;
 
 export default function MinimumDistanceSlider() {
-  const [value1, setValue1] = React.useState([40, 60]);
+  const [value1, setValue1] = React.useState([0.4, 0.6]);
 
 
   const handleChange1 = (event, newValue, activeThumb) => {

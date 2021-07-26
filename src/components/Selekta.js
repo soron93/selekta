@@ -20,9 +20,9 @@ class Selekta extends Component {
           </p>
           <p>
             <h4>Generate your personalized playlist</h4>
-            <a  href="/signin"><Button type="submit" variant="contained" color="primary">
+           <Button  variant="contained" color="primary" onClick={this.props.onSelekting}>
               Start Selekting
-            </Button></a>
+            </Button>
           </p>
         </Container>
       </div>
