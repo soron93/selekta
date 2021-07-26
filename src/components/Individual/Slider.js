@@ -2,7 +2,10 @@ import * as React from "react";
 import Box from "@material-ui/core/Box";
 import Slider from "@material-ui/core/Slider";
 
+//BELOW MATERIAL UI IMPORT CODE 
+
 const marks1 = [
+    //DANCABILITY CHILL VS AT CLUB SLIDER VALUE AND LABEL
   {
     value: 0.0,
     label: "Chilling",
@@ -14,6 +17,7 @@ const marks1 = [
 ];
 
 const marks2 = [
+      //ANAGOL VS DIGITAL  SLIDER VALUE AND LABEL
   {
     value: 0.0,
     label: "Analog",
@@ -25,6 +29,7 @@ const marks2 = [
 ];
 
 const marks3 = [
+  //SPEECH SLIDER VALUE AND LABEL
   {
     value: 0.0,
     label: "No Talking",
@@ -36,6 +41,7 @@ const marks3 = [
 ];
 
 const marks4 = [
+   //POPULARITY SLIDER VALUE AND LABEL
   {
     value: 0.0,
     label: "Local",
@@ -55,6 +61,7 @@ const minDistance = 0.1;
 export default function MinimumDistanceSlider() {
   const [value1, setValue1] = React.useState([0.4, 0.6]);
 
+  //DANCABILITY CHILL VS AT CLUB SLIDER
   const handleChange1 = (event, newValue, activeThumb) => {
     if (!Array.isArray(newValue)) {
       return;
@@ -73,6 +80,7 @@ export default function MinimumDistanceSlider() {
     }
   };
 
+  //DIGITAL VS ANALOG SLIDER
   const [value2, setValue2] = React.useState([0.4, 0.6]);
 
   const handleChange2 = (event, newValue, activeThumb) => {
@@ -92,6 +100,8 @@ export default function MinimumDistanceSlider() {
       setValue2(newValue);
     }
   };
+
+  //SPEECH SLIDER
   const [value3, setValue3] = React.useState([0.4, 0.6]);
   const handleChange3 = (event, newValue, activeThumb) => {
     if (!Array.isArray(newValue)) {
@@ -111,6 +121,7 @@ export default function MinimumDistanceSlider() {
     }
   };
 
+  //POPULARITY SLIDER
   const [value4, setValue4] = React.useState([0.4, 0.6]);
   const handleChange4 = (event, newValue, activeThumb) => {
     if (!Array.isArray(newValue)) {
@@ -131,8 +142,10 @@ export default function MinimumDistanceSlider() {
   };
 
   return (
+     //RENDERING SLIDERS
     <Box sx={{ width: 300 }}>
       <Slider
+        step={0.1}
         min={0}
         max={1}
         getAriaLabel={() => "Minimum distance"}
@@ -143,7 +156,9 @@ export default function MinimumDistanceSlider() {
         disableSwap
         marks={marks1}
       />
+     
       <Slider
+        step={0.1}
         min={0}
         max={1}
         getAriaLabel={() => "Minimum distance shift"}
@@ -155,6 +170,7 @@ export default function MinimumDistanceSlider() {
         marks={marks2}
       />
       <Slider
+        Step={0.1}
         min={0}
         max={1}
         getAriaLabel={() => "Minimum distance shift"}
@@ -166,6 +182,7 @@ export default function MinimumDistanceSlider() {
         marks={marks3}
       />
       <Slider
+        step={0.1}
         min={0}
         max={1}
         getAriaLabel={() => "Minimum distance shift"}

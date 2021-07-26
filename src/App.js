@@ -28,10 +28,11 @@ class App extends Component {
     user: null,
     myError: null,
     fetchingUser: true,
-    value1: null,
-    value2: null,
+    //SLIDER STATES
+    value2: null, 
+    value1: null,  // IS THIS CORRECT DOES IT NEED TO BE NULL OR ZERO?  
     value3: null,
-    value4: null,
+    value4: null
   };
 
   async componentDidMount() {
@@ -155,7 +156,8 @@ class App extends Component {
   };
 
   handleValue1 = () => {
-    if (this.state.setValue1) {
+    if (this.state.setValue1) { // DOES THIS NEED TO BE SET VALUE OR VALUE ?????
+
     } else {
       this.props.history.push("/profile");
     }
@@ -170,7 +172,7 @@ class App extends Component {
     console.log("On setValue2");
   };
 
-  handleValue3 = () => {
+  handleValue3 = () => { 
     if (this.state.setValue3) {
     } else {
       this.props.history.push("/profile");

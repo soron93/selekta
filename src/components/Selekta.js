@@ -9,7 +9,7 @@ import Container from "@material-ui/core/Container";
 
 class Selekta extends Component {
   render() {
-    console.log("test this");
+    console.log("test this SPLASH SCREEN");
 
     return (
       <div>
