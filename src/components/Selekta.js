@@ -16,7 +16,7 @@ class Selekta extends Component {
         <Container maxWidth="sm">
           <h1>SELEKTA SPLASH PAGE COMPONENT SHOWING</h1>
           <p>
-            <Slider />
+            <Slider onChange={this.props.handleChange1}/>
           </p>
           <p>
             <h4>Generate your personalized playlist</h4>
