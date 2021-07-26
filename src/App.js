@@ -232,7 +232,7 @@ class App extends Component {
             exact
             path={"/"}
             render={() => {
-              return <Selekta onSelekting={this.handleSelekting} onChange={this.handleChange1} />;
+              return <Selekta onSelekting={this.handleSelekting} onChange={this.handleChange1} onChange={this.handleChange2} onChange={this.handleChange3} onChange={this.handleChange4}/>;
             }}
           />
 
