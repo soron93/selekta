@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Slider from "./Individual/Slider";
+import SliderSelekta from "./Individual/SliderSelekta";
 import { Button } from "@material-ui/core";
 //import CssBaseline from '@material-ui/core/CssBaseline';
 //import Box from '@material-ui/core/Box';
@@ -21,7 +21,7 @@ class Selekta extends Component {
         <Container maxWidth="sm">
           <h1>SELEKTA SPLASH PAGE COMPONENT SHOWING</h1>
           <p>
-            <Slider onChange1={this.props.onChange1} onChange2={this.props.onChange2} 
+            <SliderSelekta onChange1={this.props.onChange1} onChange2={this.props.onChange2} 
             onChange3={this.props.onChange3} onChange4={this.props.onChange4}/>
           </p>
           <p>

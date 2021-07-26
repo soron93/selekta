@@ -11,10 +11,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Search from "./components/Search";
 //import { Paper, Grid } from '@material-ui/core';
 
-//Spotify Search Engine
-import Tracks from "./components/SpotifyApi/Tracks";
-import Albums from "./components/SpotifyApi/Albums";
-import ArtistSearch from "./components/SpotifyApi/ArtistSearch";
 
 //TEST PAGES
 import TestEmmy from "./components/TestEmmy";
@@ -22,7 +18,7 @@ import Random from "./components/SpotifyApi/Random";
 import Profile from "./components/Profile";
 import Selekta from "./components/Selekta";
 import SpotifyLogin from "./components/SpotifyLogin/SpotifyLogin";
-import MinimumDistanceSlider from './components/Individual/Slider'
+import SliderSelekta from './components/Individual/SliderSelekta'
 
 class App extends Component {
         state = {
@@ -43,7 +39,7 @@ class App extends Component {
             });
             console.log(response.data);
             this.setState({
-              //todos: response.data
+         
             });
 
             // fetch the loggedInUser if present
@@ -203,31 +199,6 @@ class App extends Component {
 
               <Switch>
             
-                <Route
-                  exact
-                  path={"/artist-search"}
-                  render={(routeProps) => {
-                    return <ArtistSearch />;
-                  }}
-                />
-
-                <Route
-                  exact
-                  path={"/albums/artistId"}
-                  render={() => {
-                    return <Albums />;
-                  }}
-                />
-
-                <Route
-                  exact
-                  path={"/tracks/:albumId"}
-                  render={() => {
-                    return <Tracks />;
-                  }}
-                />
-
-                {/* SpotifyApi end routes */}
 
                 <Route
                   exact

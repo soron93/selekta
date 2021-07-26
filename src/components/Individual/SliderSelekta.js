@@ -58,7 +58,7 @@ function valuetext(value) {
 
 const minDistance = 0.1;
 
-export default function MinimumDistanceSlider(props) {
+export default function SliderSelekta(props) {
   const [value1, setValue1] = React.useState([0.4, 0.6]);
 
   //DANCABILITY CHILL VS AT CLUB SLIDER

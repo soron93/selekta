@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 //import SliderMockUp from "./SliderMockUp";
-import Slider from "../components/Individual/Slider";
+import Slider from "./Individual/SliderSelekta";
 //import { createMuiTheme, ThemeProvider } from '@material-ui/core';
 //import AudioPlayer from 'material-ui-audio-player';
 import SpotifyButton from "./Individual/SpotifyButton";
@@ -26,7 +26,7 @@ class TestEmmy extends Component {
             </p>
           </p>
 
-          {/* */}
+          {/* 
          
 
           <iframe
@@ -36,7 +36,7 @@ class TestEmmy extends Component {
             frameborder="0"
             allowtransparency="true"
             allow="encrypted-media"
-          ></iframe>
+          ></iframe>*/}
 
           <p>
             <SpotifyButton />
