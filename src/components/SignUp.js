@@ -77,13 +77,8 @@ function SignUp(props){
                 variant="outlined"
                 required
                 fullWidth
-<<<<<<< HEAD
-                id="userName"
-                label="Userame"
-=======
                 id="username"
                 label="Username"
->>>>>>> a93d7b64df4f2f348d09d197b6ec8962312e1d63
                 name="username"
                 autoComplete="lname"
               />

@@ -199,28 +199,8 @@ class App extends Component {
     return (
       <div>
         <MyNav user={this.state.user} onLogOut={this.handleLogOut} />
-<<<<<<< HEAD
-        {/*<Grid container spacing={3}>
-          <Grid item xs={6}>
-            <Paper >
-              <Search onSearch={this.handleSearch} />
-              <Items books={this.state.filteredBooks}
-                handleAddTotal={this.handleAddTotal}
-                onAddNewBook={this.handleAddNewBook}
-              />
-            </Paper>
-          </Grid>
-          <Grid item xs={6}>
-            <Paper >
-            </Paper>
-          </Grid>
-        </Grid>
-        {/*<SliderMockUp/>  */}
-
-=======
        
        
->>>>>>> a93d7b64df4f2f348d09d197b6ec8962312e1d63
 
         <Switch>
           {/* SpotifyApi begin routes 
