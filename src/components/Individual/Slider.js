@@ -1,60 +1,59 @@
-import * as React from 'react';
-import Box from '@material-ui/core/Box';
-import Slider from '@material-ui/core/Slider';
+import * as React from "react";
+import Box from "@material-ui/core/Box";
+import Slider from "@material-ui/core/Slider";
 
 const marks1 = [
   {
     value: 0.0,
-    label: 'Chilling',
+    label: "Chilling",
   },
   {
     value: 1.0,
-    label: 'At the Club',
+    label: "At the Club",
   },
 ];
 
 const marks2 = [
-    {
-      value: 0.0,
-      label: 'Analog',
-    },
-    {
-      value: 1.0,
-      label: 'Digital',
-    },
-  ];
-  
-  const marks3 = [
-    {
-      value: 0.0,
-      label: 'No Talking',
-    },
-    {
-      value: 1.0,
-      label: 'Mad Vocals',
-    },
-  ];
-  
-  const marks4 = [
-    {
-      value: 0.0,
-      label: 'Local',
-    },
-    {
-      value: 1.0,
-      label: 'World Famous',
-    },
-  ];
+  {
+    value: 0.0,
+    label: "Analog",
+  },
+  {
+    value: 1.0,
+    label: "Digital",
+  },
+];
+
+const marks3 = [
+  {
+    value: 0.0,
+    label: "No Talking",
+  },
+  {
+    value: 1.0,
+    label: "Mad Vocals",
+  },
+];
+
+const marks4 = [
+  {
+    value: 0.0,
+    label: "Local",
+  },
+  {
+    value: 1.0,
+    label: "World Famous",
+  },
+];
 
 function valuetext(value) {
   return `${value}`;
 }
 
-const minDistance = 0.10;
+const minDistance = 0.1;
 
 export default function MinimumDistanceSlider() {
   const [value1, setValue1] = React.useState([0.4, 0.6]);
-
 
   const handleChange1 = (event, newValue, activeThumb) => {
     if (!Array.isArray(newValue)) {
@@ -63,7 +62,7 @@ export default function MinimumDistanceSlider() {
 
     if (newValue[1] - newValue[0] < minDistance) {
       if (activeThumb === 0) {
-        const clamped = Math.min(newValue[0], 1.00 - minDistance);
+        const clamped = Math.min(newValue[0], 1.0 - minDistance);
         setValue1([clamped, clamped + minDistance]);
       } else {
         const clamped = Math.max(newValue[1], minDistance);
@@ -74,7 +73,7 @@ export default function MinimumDistanceSlider() {
     }
   };
 
-  const [value2, setValue2] = React.useState([0.40, 0.60]);
+  const [value2, setValue2] = React.useState([0.4, 0.6]);
 
   const handleChange2 = (event, newValue, activeThumb) => {
     if (!Array.isArray(newValue)) {
@@ -93,7 +92,7 @@ export default function MinimumDistanceSlider() {
       setValue2(newValue);
     }
   };
-  const [value3, setValue3] = React.useState([0.40, 0.60]);
+  const [value3, setValue3] = React.useState([0.4, 0.6]);
   const handleChange3 = (event, newValue, activeThumb) => {
     if (!Array.isArray(newValue)) {
       return;
@@ -112,7 +111,7 @@ export default function MinimumDistanceSlider() {
     }
   };
 
-  const [value4, setValue4] = React.useState([0.40, 0.60]);
+  const [value4, setValue4] = React.useState([0.4, 0.6]);
   const handleChange4 = (event, newValue, activeThumb) => {
     if (!Array.isArray(newValue)) {
       return;
@@ -131,13 +130,12 @@ export default function MinimumDistanceSlider() {
     }
   };
 
-
-
-
   return (
     <Box sx={{ width: 300 }}>
       <Slider
-        getAriaLabel={() => 'Minimum distance'}
+        min={0}
+        max={1}
+        getAriaLabel={() => "Minimum distance"}
         value={value1}
         onChange={handleChange1}
         valueLabelDisplay="auto"
@@ -146,7 +144,9 @@ export default function MinimumDistanceSlider() {
         marks={marks1}
       />
       <Slider
-        getAriaLabel={() => 'Minimum distance shift'}
+        min={0}
+        max={1}
+        getAriaLabel={() => "Minimum distance shift"}
         value={value2}
         onChange={handleChange2}
         valueLabelDisplay="auto"
@@ -154,8 +154,10 @@ export default function MinimumDistanceSlider() {
         disableSwap
         marks={marks2}
       />
-          <Slider
-        getAriaLabel={() => 'Minimum distance shift'}
+      <Slider
+        min={0}
+        max={1}
+        getAriaLabel={() => "Minimum distance shift"}
         value={value3}
         onChange={handleChange3}
         valueLabelDisplay="auto"
@@ -163,8 +165,10 @@ export default function MinimumDistanceSlider() {
         disableSwap
         marks={marks3}
       />
-         <Slider
-        getAriaLabel={() => 'Minimum distance shift'}
+      <Slider
+        min={0}
+        max={1}
+        getAriaLabel={() => "Minimum distance shift"}
         value={value4}
         onChange={handleChange4}
         valueLabelDisplay="auto"
@@ -173,7 +177,5 @@ export default function MinimumDistanceSlider() {
         marks={marks4}
       />
     </Box>
-
-    
   );
 }
