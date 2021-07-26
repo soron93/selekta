@@ -11,7 +11,7 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Search from './components/Search';
 import { Paper, Grid } from '@material-ui/core';
-import { Credentials } from './components/Searchtest/Credentials';
+
 
 //Spotify Search Engine
 import Tracks from "./components/SpotifyApi/Tracks";
@@ -68,11 +68,7 @@ class App extends Component {
     }
   }
 
-  handleCredentials = async (event) => {
-  event.preventDefault()
-  const spotify = Credentials();
-  console.log('RENDERING APP.JS')
-  }
+
 
   
 
