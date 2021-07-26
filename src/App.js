@@ -22,17 +22,17 @@ import Random from "./components/SpotifyApi/Random";
 import Profile from "./components/Profile";
 import Selekta from "./components/Selekta";
 import SpotifyLogin from "./components/SpotifyLogin/SpotifyLogin";
+import MinimumDistanceSlider from './components/Individual/Slider'
 
 class App extends Component {
   state = {
     user: null,
     myError: null,
     fetchingUser: true,
-    //SLIDER STATES
-    value2: null, 
-    value1: null,  // IS THIS CORRECT DOES IT NEED TO BE NULL OR ZERO?  
-    value3: null,
-    value4: null
+    setValue1: [0.1, 0.9],
+    setValue2: [0.1, 0.9],
+    SetValue3: [0.1, 0.9],
+    setValue4: [0.1, 0.9],
   };
 
   async componentDidMount() {
@@ -155,38 +155,33 @@ class App extends Component {
     console.log("On Selekting");
   };
 
-  handleValue1 = () => {
-    if (this.state.setValue1) { // DOES THIS NEED TO BE SET VALUE OR VALUE ?????
+  handleChange1 = (value) => {
+    //updating setValue1
+    this.setState({setValue1:value})
+    console.log("On setValue1");
+  }
 
-    } else {
-      this.props.history.push("/profile");
-    }
-    console.log("On setValu1");
-  };
-
-  handleValue2 = () => {
-    if (this.state.setValue2) {
-    } else {
-      this.props.history.push("/profile");
-    }
+  handleChange2 = (value) => {
+    //updating setValue2
+    this.setState({setValue2:value})
+    
     console.log("On setValue2");
-  };
+  }
 
-  handleValue3 = () => { 
-    if (this.state.setValue3) {
-    } else {
-      this.props.history.push("/profile");
-    }
+
+  handleChange3 = (value) => {
+    //updating setValue3
+    this.setState({setValue3:value})
     console.log("On setValue3");
-  };
+  }
 
-  handleValue4 = () => {
-    if (this.state.setValue4) {
-    } else {
-      this.props.history.push("/profile");
-    }
+
+  handleChange4 = (value) => {
+    //updating setValue4
+    this.setState({setValue4:value})
     console.log("On setValue4");
-  };
+  }
+
 
   render() {
     console.log("App props", this.props);
@@ -237,7 +232,7 @@ class App extends Component {
             exact
             path={"/"}
             render={() => {
-              return <Selekta onSelekting={this.handleSelekting} />;
+              return <Selekta onSelekting={this.handleSelekting} onChange={this.handleChange1} />;
             }}
           />
 
