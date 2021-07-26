@@ -247,6 +247,7 @@ return (
 				{
 					props.user ? (
 						<button onClick={props.onLogOut}>Logout</button>
+            
 					) : (
 						<>
 							<Link  style={{marginLeft: '10px'}}  to="/signin">SignIn</Link>

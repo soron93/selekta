@@ -13,18 +13,17 @@ class Search extends Component {
       <div>
         <Container maxWidth="sm">
           <h1>SAVE PLAYLIST COMPONENT SHOWING</h1>
-
           <p>
             <h4>Results list of songs from generated playlist goes here</h4>
           </p>
           <p>
-          <TextField
-            onChange={onSearch}
-            id="standard-basic"
-            label="Name Your Playlist"
-            name="Save"
-          />
-        </p>
+            <TextField
+              onChange={onSearch}
+              id="standard-basic"
+              label="Name Your Playlist"
+              name="Save"
+            />
+          </p>
           <p>
             <SliderTime />
           </p>
@@ -35,10 +34,6 @@ class Search extends Component {
           <p>
             Save to <SpotifyButton />
           </p>
-
-
-
-
         </Container>
       </div>
     );

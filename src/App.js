@@ -6,7 +6,6 @@ import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import { API_URL } from "./config";
 import NotFound from "./components/NotFound";
-
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Search from "./components/Search";
@@ -29,10 +28,10 @@ class App extends Component {
     user: null,
     myError: null,
     fetchingUser: true,
-    setValue1: null,
-    setValue2: null,
-    SetValue3: null,
-    setValue4: null,
+    value1: null,
+    value2: null,
+    value3: null,
+    value4: null,
   };
 
   async componentDidMount() {
@@ -146,7 +145,7 @@ class App extends Component {
       console.log("Logout failed", err);
     }
   };
-
+  // SELEKTA HANDELS
   handleSelekting = () => {
     if (this.state.user) {
     } else {
@@ -199,8 +198,6 @@ class App extends Component {
     return (
       <div>
         <MyNav user={this.state.user} onLogOut={this.handleLogOut} />
-       
-       
 
         <Switch>
           {/* SpotifyApi begin routes 
