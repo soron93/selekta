@@ -1,6 +1,6 @@
 import React from  'react'
 import {Link} from  'react-router-dom'
-import {Navbar, Nav} from  'react-bootstrap'
+import {Navbar, Nav} from  'react-bootstrap'/*
 import { alpha, makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -15,7 +15,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import MoreIcon from '@material-ui/icons/MoreVert';
+import MoreIcon from '@material-ui/icons/MoreVert';*/
 
 /*
 const useStyles = makeStyles((theme: Theme) =>

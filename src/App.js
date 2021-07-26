@@ -10,7 +10,7 @@ import NotFound from "./components/NotFound";
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Search from './components/Search';
-import { Paper, Grid } from '@material-ui/core';
+//import { Paper, Grid } from '@material-ui/core';
 
 
 //Spotify Search Engine
