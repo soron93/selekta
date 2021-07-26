@@ -28,7 +28,7 @@ class SpotifyDetail extends Component {
             })
         }  
         catch(err){
-            console.log('Todo fetch failed', err)
+            console.log('T fetch failed', err)
         }
     }
 

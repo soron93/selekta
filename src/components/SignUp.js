@@ -1,4 +1,6 @@
 import React from 'react';
+
+//MATERIAL UI IMPORTS 
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -13,12 +15,13 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
+//SELEKTA COPY RIGHT MATERIAL UI
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+        Selekta
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -26,6 +29,7 @@ function Copyright() {
   );
 }
 
+//MATERIAL UI  THEME STUFF 
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
@@ -48,6 +52,8 @@ const useStyles = makeStyles((theme) => ({
 
 
 
+// FUNCTION  FOR SIGNUP IN MATERIAL UI FORMAT 
+
 function SignUp(props){
    
     const {onSignUp} = props 
@@ -63,7 +69,7 @@ function SignUp(props){
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
-    <form className={classes.form} onSubmit={onSignUp}>
+    <form className={classes.form} onSubmit={onSignUp} > 
           <Grid container spacing={2}>
           
             <Grid item xs={12}>
@@ -71,8 +77,13 @@ function SignUp(props){
                 variant="outlined"
                 required
                 fullWidth
+<<<<<<< HEAD
                 id="userName"
                 label="Userame"
+=======
+                id="username"
+                label="Username"
+>>>>>>> a93d7b64df4f2f348d09d197b6ec8962312e1d63
                 name="username"
                 autoComplete="lname"
               />

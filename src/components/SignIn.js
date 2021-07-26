@@ -1,4 +1,6 @@
 import React from "react";
+
+//MATERIAL UI IMPORTS
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -14,6 +16,8 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import SpotifyLogin from "./SpotifyLogin/SpotifyLogin";
 
+
+//MATERIAL UI COPYRIGHT FUNCTION
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -27,6 +31,7 @@ function Copyright() {
   );
 }
 
+//MATERIAL UI STUFF
 const useStyles = makeStyles((theme) => ({
   root: {
     height: "100vh",
@@ -60,6 +65,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+//MATERIAL UI SIGNIN + PROPS
 function SignIn(props) {
   const classes = useStyles();
   return (
