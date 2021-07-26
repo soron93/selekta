@@ -69,15 +69,11 @@ class App extends Component {
     }
   }
 
-<<<<<<< HEAD
-
-=======
   handleCredentials = async (event) => {
   event.preventDefault()
   //const spotify = Credentials();
   console.log('RENDERING APP.JS')
   }
->>>>>>> dfec466111fdde206e74122eae28cf7e7d3caa9b
 
   
 
@@ -261,7 +257,6 @@ handleValue4 = ()=> {
           </Grid>
           <Grid item xs={6}>
             <Paper >
-
             </Paper>
           </Grid>
         </Grid>

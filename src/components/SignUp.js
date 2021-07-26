@@ -73,7 +73,7 @@ function SignUp(props){
                 fullWidth
                 id="userName"
                 label="Userame"
-                name="userName"
+                name="username"
                 autoComplete="lname"
               />
             </Grid>
