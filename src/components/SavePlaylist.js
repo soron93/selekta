@@ -1,10 +1,20 @@
 import React, { Component } from "react";
+
+//MATERIAL UI IMPORTS
 import { TextField } from "@material-ui/core";
-import Slider from "./Individual/Slider";
 import SliderTime from "./Individual/Slider";
 import Container from "@material-ui/core/Container";
 import Toggle from "./Individual/Toggle";
 import SpotifyButton from "./Individual/SpotifyButton";
+
+// SAVE PLAYLIST COMPONENT
+// For logged in users only
+// OPTIONS 
+// - Save name 
+// - Save Duration this can actually be the limit of songs ????
+// - public or private 
+// - Save to Spotity
+
 
 class Search extends Component {
   render() {

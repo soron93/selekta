@@ -3,6 +3,8 @@ import { TextField } from "@material-ui/core";
 import Slider from "./Individual/Slider";
 import Container from "@material-ui/core/Container";
 
+
+// SEARCH 
 class Search extends Component {
   render() {
     const { onSearch } = this.props;

@@ -5,7 +5,9 @@ import { Button } from "@material-ui/core";
 //import Box from '@material-ui/core/Box';
 import Container from "@material-ui/core/Container";
 
-//SPLASHSCREEN HOMEPAGE 
+//SPLASHSCREEN HOMEPAGE  
+// This screen holds the main feature available to non logged in users and
+// To save the play list users will need to login 
 
 class Selekta extends Component {
   render() {
