@@ -16,14 +16,11 @@ import { Paper, Grid } from '@material-ui/core';
 //Spotify Search Engine
 import Tracks from "./components/SpotifyApi/Tracks";
 import Albums from './components/SpotifyApi/Albums';
-//import Index from './components/SpotifyApi/layout';
 import ArtistSearch from './components/SpotifyApi/ArtistSearch'
-
 
 
 //TEST PAGES 
 import TestEmmy from './components/TestEmmy'
-import SearchTest from './components/Search'
 import Random from './components/SpotifyApi/Random'
 import Profile from './components/Profile'
 import Selekta from './components/Selekta'
@@ -35,7 +32,11 @@ class App extends Component {
 
     user: null,
     myError: null,
-    fetchingUser: true
+    fetchingUser: true,
+    setValue1: null,
+    setValue2: null,
+    SetValue3: null,
+    setValue4: null
 
   }
 
@@ -68,7 +69,15 @@ class App extends Component {
     }
   }
 
+<<<<<<< HEAD
 
+=======
+  handleCredentials = async (event) => {
+  event.preventDefault()
+  //const spotify = Credentials();
+  console.log('RENDERING APP.JS')
+  }
+>>>>>>> dfec466111fdde206e74122eae28cf7e7d3caa9b
 
   
 
@@ -172,6 +181,55 @@ handleSelekting = ()=> {
 
 }
 
+handleValue1 = ()=> {
+ 
+  if (this.state.setValue1){
+
+  }
+  else{
+    this.props.history.push('/profile')
+  }
+  console.log('On setValu1')
+
+}
+
+handleValue2 = ()=> {
+ 
+  if (this.state.setValue2){ 
+
+  }
+  else{
+    this.props.history.push('/profile')
+  }
+  console.log('On setValue2')
+
+}
+
+
+handleValue3 = ()=> {
+ 
+  if (this.state.setValue3){ 
+
+  }
+  else{
+    this.props.history.push('/profile')
+  }
+  console.log('On setValue3')
+
+}
+
+
+handleValue4 = ()=> {
+ 
+  if (this.state.setValue4){ 
+
+  }
+  else{
+    this.props.history.push('/profile')
+  }
+  console.log('On setValue4')
+
+}
 
 
 
@@ -262,7 +320,7 @@ handleSelekting = ()=> {
 
           <Route exact path="/random" component={Random} />
 
-          <Route path="/search" render={(routeProps) => {
+         <Route path="/search" render={(routeProps) => {
             return <Search error={this.state.myError} {...routeProps} />
           }} />
 
