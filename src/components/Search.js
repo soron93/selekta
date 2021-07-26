@@ -15,6 +15,7 @@ class Search extends Component {
             <Slider />
           </p>
 
+ 
           <TextField
             onChange={onSearch}
             id="standard-basic"

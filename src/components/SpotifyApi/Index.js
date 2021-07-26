@@ -29,6 +29,8 @@ class Index extends Component {
             </form>
         )
     }
+
 }
+
 export default Index
 

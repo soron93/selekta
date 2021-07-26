@@ -13,7 +13,7 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import SliderMockUp from "./components/SliderMockUp";
 import booksJson from './books.json';
-import Search from './components/SearchTest';
+import Search from './components/Search';
 import { Paper, Grid } from '@material-ui/core';
 import Items from './components/Items';
 import { Credentials } from './components/Searchtest/Credentials';
@@ -29,7 +29,7 @@ import ArtistSearch from './components/SpotifyApi/ArtistSearch'
 //TEST PAGES 
 import TestEmmy from './components/TestEmmy'
 import TestShade from './components/TestShade'
-import SearchTest from './components/SearchTest'
+import SearchTest from './components/Search'
 import Random from './components/SpotifyApi/Random'
 import Profile from './components/Profile'
 import Selekta from './components/Selekta'
@@ -227,11 +227,11 @@ class App extends Component {
 
 
 
-        {/* SpotifyApi begin routes */}
-
+        {/* SpotifyApi begin routes 
         <Route exact path={'/'} render={() => {
             return <Index/>
-          }} />
+          }} />*/}
+
 
 
       <Route exact path={'/artist-search'} render={(routeProps) => {
