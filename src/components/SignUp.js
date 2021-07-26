@@ -71,9 +71,9 @@ function SignUp(props){
                 variant="outlined"
                 required
                 fullWidth
-                id="userName"
-                label="Userame"
-                name="userName"
+                id="username"
+                label="Username"
+                name="username"
                 autoComplete="lname"
               />
             </Grid>
