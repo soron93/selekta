@@ -11,12 +11,16 @@ class Selekta extends Component {
   render() {
     console.log("test this SPLASH SCREEN");
 
+
+   //Here inside of the component is where we pass the prop down 
+   // "onChange1"  not a keyword, is the variable name we also give it in the APP.JS compenent returned 
     return (
       <div>
         <Container maxWidth="sm">
           <h1>SELEKTA SPLASH PAGE COMPONENT SHOWING</h1>
           <p>
-            <Slider onChange={this.props.handleChange1} onChange={this.props.handleChange2} onChange={this.props.handleChange3} onChange={this.props.handleChange4}/>
+            <Slider onChange1={this.props.onChange1} onChange2={this.props.onChange2} 
+            onChange3={this.props.onChange3} onChange4={this.props.onChange4}/>
           </p>
           <p>
             <h4>Generate your personalized playlist</h4>

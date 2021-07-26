@@ -58,7 +58,7 @@ function valuetext(value) {
 
 const minDistance = 0.1;
 
-export default function MinimumDistanceSlider() {
+export default function MinimumDistanceSlider(props) {
   const [value1, setValue1] = React.useState([0.4, 0.6]);
 
   //DANCABILITY CHILL VS AT CLUB SLIDER
@@ -71,12 +71,15 @@ export default function MinimumDistanceSlider() {
       if (activeThumb === 0) {
         const clamped = Math.min(newValue[0], 1.0 - minDistance);
         setValue1([clamped, clamped + minDistance]);
+        props.onChange1([clamped, clamped + minDistance]) // saves the value 
       } else {
         const clamped = Math.max(newValue[1], minDistance);
         setValue1([clamped - minDistance, clamped]);
+        props.onChange1([clamped, clamped + minDistance]) // saves the value 
       }
     } else {
-      setValue1(newValue);
+      setValue1(newValue);  // NOTS SURE ABOUT THIS  do we need to add it here  got a compile error 
+     
     }
   };
 
@@ -92,9 +95,12 @@ export default function MinimumDistanceSlider() {
       if (activeThumb === 0) {
         const clamped = Math.min(newValue[0], 1.0 - minDistance);
         setValue2([clamped, clamped + minDistance]);
+        props.onChange2([clamped, clamped + minDistance]) // saves the value 
       } else {
         const clamped = Math.max(newValue[1], minDistance);
         setValue2([clamped - minDistance, clamped]);
+        props.onChange2([clamped, clamped + minDistance]) // saves the value 
+
       }
     } else {
       setValue2(newValue);
@@ -112,9 +118,11 @@ export default function MinimumDistanceSlider() {
       if (activeThumb === 0) {
         const clamped = Math.min(newValue[0], 1.0 - minDistance);
         setValue3([clamped, clamped + minDistance]);
+        props.onChange3([clamped, clamped + minDistance]) // saves the value 
       } else {
         const clamped = Math.max(newValue[1], minDistance);
         setValue3([clamped - minDistance, clamped]);
+        props.onChange3([clamped, clamped + minDistance]) // saves the value 
       }
     } else {
       setValue3(newValue);
@@ -132,9 +140,11 @@ export default function MinimumDistanceSlider() {
       if (activeThumb === 0) {
         const clamped = Math.min(newValue[0], 100 - minDistance);
         setValue4([clamped, clamped + minDistance]);
+        props.onChange4([clamped, clamped + minDistance]) // saves the value 
       } else {
         const clamped = Math.max(newValue[1], minDistance);
         setValue4([clamped - minDistance, clamped]);
+        props.onChange4([clamped, clamped + minDistance]) // saves the value 
       }
     } else {
       setValue4(newValue);

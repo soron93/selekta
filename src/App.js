@@ -197,11 +197,7 @@ class App extends Component {
         <MyNav user={this.state.user} onLogOut={this.handleLogOut} />
 
         <Switch>
-          {/* SpotifyApi begin routes 
-        <Route exact path={'/'} render={() => {
-            return <Index/>
-          }} />*/}
-
+      
           <Route
             exact
             path={"/artist-search"}
@@ -231,8 +227,11 @@ class App extends Component {
           <Route
             exact
             path={"/"}
-            render={() => {
-              return <Selekta onSelekting={this.handleSelekting} onChange={this.handleChange1} onChange={this.handleChange2} onChange={this.handleChange3} onChange={this.handleChange4}/>;
+            render={() => { 
+              // "onchange1"  not a ket work a variable name can be anything is being passed down to the  CHILD 
+              // "this.handleChange"  Needs to to be the name of the function above 
+              return <Selekta onSelekting={this.handleSelekting} onChange1={this.handleChange1}
+              onChange2={this.handleChange2} onChange3={this.handleChange3} onChange4={this.handleChange4}  />;
             }}
           />
 
