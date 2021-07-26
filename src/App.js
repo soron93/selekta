@@ -235,7 +235,8 @@ class App extends Component {
             exact
             path={"/"}
             render={() => {
-              return <Selekta onSelekting={this.handleSelekting} onChange={this.handleChange1} />;
+              return <Selekta onSelekting={this.handleSelekting} onChange1={this.handleChange1}
+              onChange2={this.handleChange2} onChange3={this.handleChange3} onChange4={this.handleChange4}  />;
             }}
           />
 

@@ -52,7 +52,7 @@ function valuetext(value) {
 
 const minDistance = 0.1;
 
-export default function MinimumDistanceSlider() {
+export default function MinimumDistanceSlider(props) {
   const [value1, setValue1] = React.useState([0.4, 0.6]);
 
   const handleChange1 = (event, newValue, activeThumb) => {
@@ -64,6 +64,7 @@ export default function MinimumDistanceSlider() {
       if (activeThumb === 0) {
         const clamped = Math.min(newValue[0], 1.0 - minDistance);
         setValue1([clamped, clamped + minDistance]);
+        props.onChange1([clamped, clamped + minDistance])
       } else {
         const clamped = Math.max(newValue[1], minDistance);
         setValue1([clamped - minDistance, clamped]);
