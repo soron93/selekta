@@ -1,16 +1,45 @@
 import React, { Component } from "react";
 import SliderSelekta from "./Individual/SliderSelekta";
-import { Button } from "@material-ui/core";
+import { Button, TextField } from "@material-ui/core";
 //import CssBaseline from '@material-ui/core/CssBaseline';
 //import Box from '@material-ui/core/Box';
 import Container from "@material-ui/core/Container";
 import Tracks from "./SpotifyApi/Tracks";
+import axios from "axios";
+import { API_URL } from "../config";
 
 //SPLASHSCREEN HOMEPAGE
 // This screen holds the main feature available to non logged in users and
 // To save the play list users will need to login
 
 class Selekta extends Component {
+
+state = {
+  playlistName:''
+
+}
+  
+handleSave = (event) => {
+console.log(event.target.value)
+this.setState({playlistName:event.target.value})
+}
+
+handleSaveButtonClick = () => {
+  let data={
+    playlistName:this.state.playlistName,
+    tracks:this.props.tracks
+  }
+  axios.post(`${API_URL}/api/create-playlist`, data, {withCredentials: true})
+    .then(()=>{
+
+    })
+    .catch(()=>{
+      
+    })
+
+}
+
+
   render() {
     console.log("test this SPLASH SCREEN");
 
@@ -28,12 +57,7 @@ class Selekta extends Component {
               onChange4={this.props.onChange4}
             />
           </p>
-          <p>
-          {
-            this.props.tracks.length ?  <Tracks tracks={this.props.tracks} /> : "No Playlist Created"
-          }
-           
-          </p>
+          
           <p>
             <h4>Generate your personalized playlist</h4>
             <Button
@@ -43,15 +67,37 @@ class Selekta extends Component {
             >
               Start Selekting
             </Button>
+
+            {/* is visible after start selekting is pressed  */}
+
             {
-            this.props.tracks.length ?  <Button
-              variant="contained"
-              color="primary"
-              onClick={this.props.onSave}
-            >
-              Save Playlist
-            </Button> : " "
-          }
+              this.props.tracks.length ? 
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={this.handleSaveButtonClick}
+              >
+                Save Playlist 
+              </Button> : " "
+            }
+  
+             {/* name playlist after selekting   */}
+
+              <p></p>
+            {
+              
+              this.props.tracks.length ? <TextField onChange={this.handleSave} tracks={this.props.tracks} 
+              id="standard-basic"
+              label="Name Your Playlist"
+              name="Save"/> : ""
+              
+            }
+          </p>
+           
+          <p>
+            {
+              this.props.tracks.length ?  <Tracks tracks={this.props.tracks} /> : "No Playlist Created"
+            }
           </p>
         </Container>
       </div>

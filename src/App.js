@@ -259,6 +259,8 @@ class App extends Component {
           }
         };
 
+
+
         // SELEKTA HANDELS
         handleSelekting = () => {
           if (this.state.user) {
@@ -287,13 +289,6 @@ class App extends Component {
           }
           console.log("On Selekting");
         };
-        
-
-        handleSave = () => {
-          //updating setValue1
-          
-          console.log("On Save");
-        }
 
 
         //SLIDER FUNCTIONS 
@@ -348,7 +343,7 @@ class App extends Component {
                 <Route exact path={"/"} render={() => { 
                     // "onchange1"  not a ket work a variable name can be anything is being passed down to the  CHILD 
                     // "this.handleChange"  Needs to to be the name of the function above 
-                    return <Selekta onSave={this.handleSave} onSelekting={this.handleSelekting} onChange1={this.handleChange1}
+                    return <Selekta onSelekting={this.handleSelekting} onChange1={this.handleChange1}
                     onChange2={this.handleChange2} onChange3={this.handleChange3} onChange4={this.handleChange4} tracks={this.state.tracks}  />;
                   }}
                 />
