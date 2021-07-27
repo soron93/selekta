@@ -138,7 +138,7 @@ export default function SliderSelekta(props) {
 
     if (newValue[1] - newValue[0] < minDistance) {
       if (activeThumb === 0) {
-        const clamped = Math.min(newValue[0], 100 - minDistance);
+        const clamped = Math.min(newValue[0], 1.0 - minDistance);
         setValue4([clamped, clamped + minDistance]);
         props.onChange4([clamped, clamped + minDistance]) // saves the value 
       } else {
@@ -203,6 +203,9 @@ export default function SliderSelekta(props) {
         disableSwap
         marks={marks4}
       />
+
+   
+
     </Box>
   );
 }

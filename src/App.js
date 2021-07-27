@@ -12,6 +12,13 @@ import Search from "./components/Search";
 //import { Paper, Grid } from '@material-ui/core';
 
 
+
+import { ThemeProvider } from "@material-ui/styles";
+
+
+
+
+
 //TEST PAGES
 import TestEmmy from "./components/TestEmmy";
 import Random from "./components/SpotifyApi/Random";
@@ -19,6 +26,8 @@ import Profile from "./components/Profile";
 import Selekta from "./components/Selekta";
 import SpotifyLogin from "./components/SpotifyLogin/SpotifyLogin";
 import SliderSelekta from './components/Individual/SliderSelekta'
+import SliderTime from './components/Individual/SliderTime'
+
 
 class App extends Component {
         state = {
@@ -31,6 +40,8 @@ class App extends Component {
           setValue4: [0.1, 0.9],
         };
 
+
+        
         async componentDidMount() {
           try {
             // fetch all the initial todos to show on the home page
@@ -192,6 +203,7 @@ class App extends Component {
           }
 
    
+          
 
           return (
             <div>
@@ -199,6 +211,7 @@ class App extends Component {
 
               <Switch>
             
+          
 
                 <Route
                   exact
