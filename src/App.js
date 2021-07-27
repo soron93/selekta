@@ -16,7 +16,10 @@ import Search from "./components/Search";
 import { ThemeProvider } from "@material-ui/styles";
 
 
-
+//CRUD
+import AddProfile from "./components/AddProfile";
+import CrudList from "./components/CrudList";
+import CrudDetail from "./components/CrudDetail";
 
 
 //TEST PAGES
@@ -31,6 +34,7 @@ import SliderTime from './components/Individual/SliderTime'
 
 class App extends Component {
         state = {
+          crud:[],
           user: null,
           myError: null,
           fetchingUser: true,
@@ -44,13 +48,12 @@ class App extends Component {
         
         async componentDidMount() {
           try {
-            // fetch all the initial todos to show on the home page
-            let response = await axios.get(`${API_URL}/api/todos`, {
-              withCredentials: true,
-            });
+            // fetch all the initial crud to show on the home page
+            let response = await axios.get(`${API_URL}/api/crud`, {
+            withCredentials: true,});
             console.log(response.data);
             this.setState({
-         
+              crud: response.data
             });
 
             // fetch the loggedInUser if present
@@ -62,7 +65,7 @@ class App extends Component {
               fetchingUser: false,
             });
           } catch (err) {
-            console.log("Spotify fetch failed", err);
+            console.log("Crud fetch failed", err);
             this.setState({
               fetchingUser: false,
             });
@@ -74,6 +77,107 @@ class App extends Component {
           //const spotify = Credentials();
           console.log("RENDERING APP.JS");
         };
+
+        
+
+        handleAddCrud = async (event) => {
+
+          event.preventDefault()
+      
+          //First upload the image to cloudinary
+          // then send the image url to our /api/create request
+          
+          // How to grab the image from our input 
+          console.log(event.target.myImage.files[0] )
+      
+          let formData = new FormData()
+          formData.append('imageUrl', event.target.myImage.files[0])
+      
+          let imgResponse = await axios.post(`${API_URL}/api/upload`, formData)
+          console.log(imgResponse)
+      
+      
+          let newCrud = {
+            name: event.target.name.value,
+            description: event.target.description.value,
+            completed: false,
+            image: imgResponse.data.image
+          }
+      
+          // Pass the data in POST requests as the second parameter
+          // create the crud in the DB
+          axios.post(`${API_URL}/api/create`, newCrud, {withCredentials: true})
+            .then((response) => {
+                // Also update the state locally
+                // use the newly created to from your DB and not the local todo that we created above.
+      
+                this.setState({
+                  crud: [response.data, ...this.state.cruds]
+                }, () => {
+                    // to do something synchronous with the setState
+      
+                    // redirects the app to a certain url
+                    // we're using the history push method to redirect it to any url we want
+                    this.props.history.push('/')
+                })
+            })
+            .catch(() => {
+              console.log('Adding crud failed')
+            })
+      
+        }
+
+
+        handleDeleteCrud = (crudId) => {
+          // delete the todo from the DB
+          axios.delete(`${API_URL}/api/cruds/${crudId}`, {withCredentials: true})
+            .then(() => {
+              // and then also filter and remove the todo from the local state
+              let filteredCruds = this.state.cruds.filter((crud) => {
+                return crud._id !== crudId
+              })
+      
+              //update the state and redirect synchronously
+              this.setState({
+                cruds: filteredCruds
+              } , () => {
+                this.props.history.push('/')
+              })
+      
+            })
+            .catch(() => {
+              console.log('Delete failed')
+            })
+        }
+
+
+        handleEditTodo = (event, crud) => {
+          event.preventDefault()
+      
+          // pass a second parameter to the patch for sending info to your server inside req.body
+          axios.patch(`${API_URL}/api/cruds/${crud._id}`, crud, {withCredentials: true})
+            .then(() => {
+                // also update your local state here and redirect to home page
+                // mapping over all the todos and updating the one that was edited
+                let updatedCruds = this.state.crud.map((singleCrud) => {
+                    if (singleCrud._id === crud._id) {
+                      singleCrud.name = crud.name
+                      singleCrud.description = crud.description
+                    } 
+                  return singleCrud
+                })
+      
+                this.setState({
+                  cruds: updatedCruds
+                }, () => {
+                   this.props.history.push('/')
+                })
+            })
+            .catch(() => {
+                console.log('Edit failed')
+            })
+        }
+
 
         handleSignUp = async (event) => {
           event.preventDefault();
@@ -102,7 +206,7 @@ class App extends Component {
           console.log("App was updated");
         }
 
-        handleSignIn = async (event) => {
+        handleSignIn = async (event) => { 
           event.preventDefault();
           console.log("Sign in works!!!! Yippeeee");
           // event.target here is a `<form>` node
@@ -213,17 +317,14 @@ class App extends Component {
             
           
 
-                <Route
-                  exact
-                  path={"/"}
-                  render={() => { 
+                <Route exact path={"/"} render={() => { 
                     // "onchange1"  not a ket work a variable name can be anything is being passed down to the  CHILD 
                     // "this.handleChange"  Needs to to be the name of the function above 
                     return <Selekta onSelekting={this.handleSelekting} onChange1={this.handleChange1}
                     onChange2={this.handleChange2} onChange3={this.handleChange3} onChange4={this.handleChange4}  />;
                   }}
                 />
-
+{/* 
                 <Route
                   path="/signin"
                   render={(routeProps) => {
@@ -242,7 +343,35 @@ class App extends Component {
                   render={(routeProps) => {
                     return <SignUp onSignUp={this.handleSignUp} {...routeProps} />;
                   }}
+                /> */}
+
+
+              <Route exact path={'/cude/:crudId'} render={(routeProps) => {
+                return <CrudDetail user={this.state.user} {...routeProps} onDelete={this.handleDeleteCrud} />
+              }} />
+                          
+                {/* <Route exact path={'/'}  render={() => {
+                return <CrudList  cruds={this.state.cruds} />
+              }} /> */}
+
+
+
+
+
+              <Route path={'/add-profile'} render={() => {
+                 return <AddProfile user={this.state.user} onAdd={this.handleAddCrud}/>
+                }} 
                 />
+
+
+              <Route  path="/signin"  render={(routeProps) => {
+                return  <SignIn  error={this.state.myError} onSignIn={this.handleSignIn} {...routeProps}  />
+              }}/>
+
+              <Route  path="/signup"  render={(routeProps) => {
+                return  <SignUp onSignUp={this.handleSignUp} {...routeProps}  />
+              }}/>
+
 
                 <Route
                   path="/testemmy"
