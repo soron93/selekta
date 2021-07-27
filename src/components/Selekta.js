@@ -29,7 +29,10 @@ class Selekta extends Component {
             />
           </p>
           <p>
-            <Tracks />
+          {
+            this.props.tracks.length ?  <Tracks tracks={this.props.tracks} /> : "No Playlist Created"
+          }
+           
           </p>
           <p>
             <h4>Generate your personalized playlist</h4>
@@ -40,6 +43,15 @@ class Selekta extends Component {
             >
               Start Selekting
             </Button>
+            {
+            this.props.tracks.length ?  <Button
+              variant="contained"
+              color="primary"
+              onClick={this.props.onSave}
+            >
+              Save Playlist
+            </Button> : " "
+          }
           </p>
         </Container>
       </div>
