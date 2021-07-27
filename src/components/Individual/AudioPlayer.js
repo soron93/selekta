@@ -22,3 +22,5 @@ const src = [
     src={src}
   />
 </ThemeProvider>;
+
+export default AudioPlayer

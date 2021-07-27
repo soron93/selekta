@@ -8,6 +8,8 @@ import Tracks from "./SpotifyApi/Tracks";
 import axios from "axios";
 import { API_URL } from "../config";
 
+//import AudioPlayer from "./Individual/AudioPlayer";
+
 //SPLASHSCREEN HOMEPAGE
 // This screen holds the main feature available to non logged in users and
 // To save the play list users will need to login
@@ -67,9 +69,20 @@ handleSaveButtonClick = () => {
             >
               Start Selekting
             </Button>
+            </p>
 
             {/* is visible after start selekting is pressed  */}
-
+            <p>
+            {
+              
+              this.props.tracks.length ? <TextField onChange={this.handleSave} tracks={this.props.tracks} 
+              id="standard-basic"
+              label="Name Your Playlist"
+              name="Save"/> : ""
+              
+            }
+            </p>
+            <div>
             {
               this.props.tracks.length ? 
               <Button
@@ -80,20 +93,11 @@ handleSaveButtonClick = () => {
                 Save Playlist 
               </Button> : " "
             }
+            </div>
   
              {/* name playlist after selekting   */}
-
-              <p></p>
-            {
-              
-              this.props.tracks.length ? <TextField onChange={this.handleSave} tracks={this.props.tracks} 
-              id="standard-basic"
-              label="Name Your Playlist"
-              name="Save"/> : ""
-              
-            }
-          </p>
-           
+             
+       
           <p>
             {
               this.props.tracks.length ?  <Tracks tracks={this.props.tracks} /> : "No Playlist Created"
