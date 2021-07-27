@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import SpotifyGetPlaylists from "./SpotifyApi/SpotifyGetPlaylists";
 import SavePlaylist from "./SavePlaylist";
 import Container from "@material-ui/core/Container";
+import SliderTime from "./Individual/SliderTime";
+
 
 //USER PROFILE IN THE APP PRIVATE PAGE
 //SHOULD SHOW A LIST OF SAVED PLAY LIST
@@ -17,6 +19,7 @@ class Profile extends Component {
           <h1>PROFILE COMPONENT SHOWING</h1>
           <SpotifyGetPlaylists />
           <SavePlaylist/>
+          <SliderTime/>
         </Container>
       </div>
     );

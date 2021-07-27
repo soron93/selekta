@@ -40,7 +40,7 @@ class App extends Component {
           fetchingUser: true,
           setValue1: [0.1, 0.9],
           setValue2: [0.1, 0.9],
-          SetValue3: [0.1, 0.9],
+          setValue3: [0.1, 0.9],
           setValue4: [0.1, 0.9],
         };
 
@@ -261,6 +261,25 @@ class App extends Component {
         // SELEKTA HANDELS
         handleSelekting = () => {
           if (this.state.user) {
+            let audio_features = {
+              min_danceability:this.state.setValue1[0],
+              max_danceability:this.state.setValue1[1],
+              min_acousticness:this.state.setValue2[0],
+              max_acousticness:this.state.setValue2[1],
+              min_speechiness:this.state.setValue3[0],
+              max_speechiness:this.state.setValue3[1],
+              min_popularity:this.state.setValue4[0],
+              max_popularity:this.state.setValue4[1]
+            }
+            axios.post( `${API_URL}/api/generate-playlist`, audio_features, { withCredentials: true } )
+            .then((response) => {
+              console.log(response.data)
+            })
+            .catch(() => {
+              console.log("post fail");
+            })
+
+            
           } else {
             this.props.history.push("/signin");
           }
@@ -274,28 +293,28 @@ class App extends Component {
         handleChange1 = (value) => {
           //updating setValue1
           this.setState({setValue1:value})
-          console.log("On setValue1");
+          console.log("On setValue1", value);
         }
 
         handleChange2 = (value) => {
           //updating setValue2
           this.setState({setValue2:value})
           
-          console.log("On setValue2");
+          console.log("On setValue2", value);
         }
 
 
         handleChange3 = (value) => {
           //updating setValue3
           this.setState({setValue3:value})
-          console.log("On setValue3");
+          console.log("On setValue3", value);
         }
 
 
         handleChange4 = (value) => {
           //updating setValue4
           this.setState({setValue4:value})
-          console.log("On setValue4");
+          console.log("On setValue4", value);
         }
 
 

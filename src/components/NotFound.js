@@ -1,21 +1,16 @@
-import React, { Component } from 'react'
-import LottieControl from './Loading/LottieControl'
-import notFound from '../animation/notFound.json'
+import React, { Component } from "react";
+import LottieControl from "./Loading/LottieControl";
+import notFound from "../animation/notFound.json";
 
 class NotFound extends Component {
-    render() {
-        return (
-            <div>
-                404! 
-                <LottieControl 
-                    width={400}
-                    height={400}
-                    animation={notFound}
-                />
-            </div>
-        )
-    }
+  render() {
+    return (
+      <div>
+        404!
+        <LottieControl width={400} height={400} animation={notFound} />
+      </div>
+    );
+  }
 }
 
-
-export default NotFound
+export default NotFound;

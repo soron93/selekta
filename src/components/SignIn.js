@@ -16,7 +16,6 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import SpotifyLogin from "./SpotifyLogin/SpotifyLogin";
 
-
 //MATERIAL UI COPYRIGHT FUNCTION
 function Copyright() {
   return (
@@ -118,17 +117,16 @@ function SignIn(props) {
             </Button>
             <Grid container>
               <Grid item xs>
-              <p><p>
-                  <SpotifyLogin />
-                </p></p>  
+                <p>
+                  <p>
+                    <SpotifyLogin />
+                  </p>
+                </p>
               </Grid>
-              <Grid item>
-              
-                
-              </Grid>
+              <Grid item></Grid>
               <Link href="/signup" variant="body2">
-                  {"Need an account? Sign Up"}
-                </Link>
+                {"Need an account? Sign Up"}
+              </Link>
             </Grid>
             <Box mt={5}>
               <Copyright />
