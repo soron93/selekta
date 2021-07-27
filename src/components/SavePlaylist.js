@@ -48,9 +48,7 @@ class Search extends Component {
       <div>
         <Container maxWidth="sm">
           <h1>SAVE PLAYLIST COMPONENT SHOWING</h1>
-          <p>
-            <h4>Results list of songs from generated playlist goes here</h4>
-          </p>
+        
           <p>
             <TextField
               onChange={onSearch}
@@ -59,16 +57,7 @@ class Search extends Component {
               name="Save"
             />
           </p>
-          <p>
-            <SliderTime />
-          </p>
-          <p>
-            <Toggle />
-          </p>
-
-          <p>
-            Save to <SpotifyButton />
-          </p>
+         
         </Container>
       </div>
     );
