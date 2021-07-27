@@ -49,7 +49,6 @@ class App extends Component {
         
         async componentDidMount() {
           try {
-<<<<<<< HEAD
             // fetch all the initial crud to show on the home page
             let response = await axios.get(`${API_URL}/api/crud`, {
             withCredentials: true,});
@@ -57,9 +56,6 @@ class App extends Component {
             this.setState({
               crud: response.data
             });
-=======
-          
->>>>>>> d8182853439d62739e05987e9387c3d6a9dbdb51
 
             // fetch the loggedInUser if present
             let userResponse = await axios.get(`${API_URL}/api/user`, {
