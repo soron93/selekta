@@ -42,12 +42,14 @@ class App extends Component {
           setValue2: [0.1, 0.9],
           setValue3: [0.1, 0.9],
           setValue4: [0.1, 0.9],
+          tracks:[],
         };
 
 
         
         async componentDidMount() {
           try {
+<<<<<<< HEAD
             // fetch all the initial crud to show on the home page
             let response = await axios.get(`${API_URL}/api/crud`, {
             withCredentials: true,});
@@ -55,6 +57,9 @@ class App extends Component {
             this.setState({
               crud: response.data
             });
+=======
+          
+>>>>>>> d8182853439d62739e05987e9387c3d6a9dbdb51
 
             // fetch the loggedInUser if present
             let userResponse = await axios.get(`${API_URL}/api/user`, {
@@ -274,6 +279,7 @@ class App extends Component {
             axios.post( `${API_URL}/api/generate-playlist`, audio_features, { withCredentials: true } )
             .then((response) => {
               console.log(response.data)
+              this.setState({tracks:response.data.tracks})
             })
             .catch(() => {
               console.log("post fail");
@@ -286,6 +292,13 @@ class App extends Component {
           console.log("On Selekting");
         };
         
+
+        handleSave = () => {
+          //updating setValue1
+          
+          console.log("On Save");
+        }
+
 
         //SLIDER FUNCTIONS 
         // names of these will be  used to pass down the props to the CHILD COMPONENT 
@@ -339,8 +352,8 @@ class App extends Component {
                 <Route exact path={"/"} render={() => { 
                     // "onchange1"  not a ket work a variable name can be anything is being passed down to the  CHILD 
                     // "this.handleChange"  Needs to to be the name of the function above 
-                    return <Selekta onSelekting={this.handleSelekting} onChange1={this.handleChange1}
-                    onChange2={this.handleChange2} onChange3={this.handleChange3} onChange4={this.handleChange4}  />;
+                    return <Selekta onSave={this.handleSave} onSelekting={this.handleSelekting} onChange1={this.handleChange1}
+                    onChange2={this.handleChange2} onChange3={this.handleChange3} onChange4={this.handleChange4} tracks={this.state.tracks}  />;
                   }}
                 />
 {/* 
