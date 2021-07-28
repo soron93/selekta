@@ -1,11 +1,5 @@
 import React, { Component } from "react";
-//import {Link} from 'react-router-dom'
-import SpotifyGetPlaylists from "./SpotifyApi/SpotifyGetPlaylists";
-import SavePlaylist from "./SavePlaylist";
 import Container from "@material-ui/core/Container";
-import SliderTime from "./Individual/SliderTime";
-import {Button} from  'react-bootstrap'
-import {Redirect} from 'react-router-dom'
 import axios from "axios";
 import { API_URL } from "../config";
 import {Link} from  'react-router-dom'
@@ -34,14 +28,10 @@ class Profile extends Component {
   render() {
     console.log("test this");
 
-    if (!this.props.user) {
-			//redirect to sigin page
-			return <Redirect to={'/signin'}/>
-		}
-
     return (
       <div>
         <Container maxWidth="sm">
+        
           {
             this.state.playlists.map((playlist) => {
               return <p><Link to={`/playlist/${playlist._id}`}>{playlist.name}</Link></p>

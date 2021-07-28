@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from "axios";
 import { API_URL } from "../config";
+import {Link} from  'react-router-dom'
 
 
 
@@ -32,14 +33,24 @@ export default class PlaylistDetail extends Component {
         return (
 
             <div>
-                Playlist Detail
-                {this.state.playlist.name}
+               <p> Playlist Detail</p>
+               <p>{this.state.playlist.name}   <Link to={`/playlist/${this.state.playlist._id}/edit`}><button>Edit Playlist</button></Link></p>
                 {
             this.state.playlist.tracks.map((track) => {
-              return <p>{track.name}</p>
+              return<p> {track.name}</p>
             })
           }
+              
+
+
+
             </div>
+
+
+
+
+
+
         )
     }
 }

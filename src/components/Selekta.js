@@ -26,17 +26,27 @@ class Selekta extends Component {
   };
 
   handleSaveButtonClick = () => {
-    let data = {
-      playlistName: this.state.playlistName,
-      tracks: this.props.tracks,
-    };
-    axios
-      .post(`${API_URL}/api/create-playlist`, data, { withCredentials: true })
-      .then(() => {
-        this.props.history.push("/profile") //redirect to profile after save
-      })
-      .catch(() => {});
-  };
+  
+    if (this.props.user) {
+      let data = {
+        playlistName: this.state.playlistName,
+        tracks: this.props.tracks,
+      };
+      axios
+        .post(`${API_URL}/api/create-playlist`, data, { withCredentials: true })
+        .then(() => {
+          this.props.history.push("/profile") //redirect to profile after save
+        })
+        .catch(() => {});
+    
+     
+            
+    } else {
+      this.props.history.push("/signin");
+    
+    }
+
+  }
 
   render() {
     console.log("test this SPLASH SCREEN");
@@ -46,13 +56,13 @@ class Selekta extends Component {
     return (
       <div>
         <Container maxWidth="sm">
-          <Grid
+          <Grid container spacing={2} xs={12}
             container
             direction="column"
             justifyContent="space-between"
             alignItems="center"
           >
-            <Grid item  
+            <Grid item  xs={11}
             container
             direction="column"
             justifyContent="space-between"
@@ -65,27 +75,26 @@ class Selekta extends Component {
                   onChange4={this.props.onChange4}
                 />
               </p>
-            </Grid>
-
-            <Grid item
-             container
-            direction="column"
-            justifyContent="space-between"
-            alignItems="center">
-              <p>
+              </Grid>
+              <Grid item>
+         
                 <h4>Generate your personalized playlist</h4>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  onClick={this.props.onSelekting}
-                >
-                  Start Selekting
-                </Button>
-              </p>
+        
+              </Grid>
+                
+                <Grid item xs={6}>
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      onClick={this.props.onSelekting}>
+                      Start Selekting
+                    </Button>
+             
             </Grid>
-            <Grid item>
+            <Grid item xs={6}>
               {/* is visible after start selekting is pressed  */}
               <p>
+             
                 {this.props.tracks.length ? (
                   <TextField
                     onChange={this.handleSave}
@@ -98,7 +107,9 @@ class Selekta extends Component {
                   ""
                 )}
               </p>
-              <div>
+              </Grid>
+              <Grid item xs={6}>
+              
                 {this.props.tracks.length ? (
                   <Button
                     variant="contained"
@@ -110,7 +121,7 @@ class Selekta extends Component {
                 ) : (
                   " "
                 )}
-              </div>
+             
             </Grid>
 
             {/* name playlist after selekting   */}

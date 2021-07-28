@@ -7,30 +7,11 @@ import SignUp from "./components/SignUp";
 import { API_URL } from "./config";
 import NotFound from "./components/NotFound";
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import Search from "./components/Search";
-//import { Paper, Grid } from '@material-ui/core';
-
-
-
-import { ThemeProvider } from "@material-ui/styles";
-
-
-//CRUD
-import AddProfile from "./components/AddProfile";
-import CrudList from "./components/CrudList";
-import CrudDetail from "./components/CrudDetail";
-
-
-//TEST PAGES
-import TestEmmy from "./components/TestEmmy";
-import Random from "./components/SpotifyApi/Random";
 import Profile from "./components/Profile";
 import Selekta from "./components/Selekta";
 import SpotifyLogin from "./components/SpotifyLogin/SpotifyLogin";
-import SliderSelekta from './components/Individual/SliderSelekta'
-import SliderTime from './components/Individual/SliderTime'
 import PlaylistDetail from "./components/PlaylistDetail";
+import EditPlaylist from "./components/EditPlaylist";
 
 class App extends Component {
         state = {
@@ -45,8 +26,6 @@ class App extends Component {
           tracks:[],
         };
 
-
-        
         async componentDidMount() {
           try {
             // fetch all the initial crud to show on the home page
@@ -128,7 +107,6 @@ class App extends Component {
       
         }
 
-
         handleDeleteCrud = (crudId) => {
           // delete the todo from the DB
           axios.delete(`${API_URL}/api/cruds/${crudId}`, {withCredentials: true})
@@ -152,7 +130,7 @@ class App extends Component {
         }
 
 
-        handleEditTodo = (event, crud) => {
+        handleEditCrud = (event, crud) => {
           event.preventDefault()
       
           // pass a second parameter to the patch for sending info to your server inside req.body
@@ -263,30 +241,28 @@ class App extends Component {
 
         // SELEKTA HANDELS
         handleSelekting = () => {
-          if (this.state.user) {
-            let audio_features = {
-              min_danceability:this.state.setValue1[0],
-              max_danceability:this.state.setValue1[1],
-              min_acousticness:this.state.setValue2[0],
-              max_acousticness:this.state.setValue2[1],
-              min_speechiness:this.state.setValue3[0],
-              max_speechiness:this.state.setValue3[1],
-              min_popularity:this.state.setValue4[0],
-              max_popularity:this.state.setValue4[1]
-            }
-            axios.post( `${API_URL}/api/generate-playlist`, audio_features, { withCredentials: true } )
-            .then((response) => {
-              console.log(response.data)
-              this.setState({tracks:response.data.tracks})
-            })
-            .catch(() => {
-              console.log("post fail");
-            })
 
-            
-          } else {
-            this.props.history.push("/signin");
+          let audio_features = {
+            min_danceability:this.state.setValue1[0],
+            max_danceability:this.state.setValue1[1],
+            min_acousticness:this.state.setValue2[0],
+            max_acousticness:this.state.setValue2[1],
+            min_speechiness:this.state.setValue3[0],
+            max_speechiness:this.state.setValue3[1],
+            min_popularity:this.state.setValue4[0],
+            max_popularity:this.state.setValue4[1]
           }
+          axios.post( `${API_URL}/api/generate-playlist`, audio_features, { withCredentials: true } )
+          .then((response) => {
+            console.log(response.data)
+            this.setState({tracks:response.data.tracks})
+          })
+          .catch(() => {
+            console.log("post fail");
+          })
+
+
+          
           console.log("On Selekting");
         };
 
@@ -338,17 +314,18 @@ class App extends Component {
 
               <Switch>
             
-          
+        
 
                 <Route exact path={"/"} render={(routeProps) => { 
                     // "onchange1"  not a ket work a variable name can be anything is being passed down to the  CHILD 
                     // "this.handleChange"  Needs to to be the name of the function above 
                     return <Selekta onSelekting={this.handleSelekting} onChange1={this.handleChange1}
-                    onChange2={this.handleChange2} onChange3={this.handleChange3} onChange4={this.handleChange4} tracks={this.state.tracks} {...routeProps} />;
+                    onChange2={this.handleChange2} onChange3={this.handleChange3} onChange4={this.handleChange4} tracks={this.state.tracks} {...routeProps} 
+                    user={this.state.user}/>;
                   }}
                 />
 
-  
+                  
 
               <Route  path="/signin"  render={(routeProps) => {
                 return  <SignIn  error={this.state.myError} onSignIn={this.handleSignIn} {...routeProps}  />
@@ -359,21 +336,8 @@ class App extends Component {
               }}/>
 
 
-                <Route
-                  path="/testemmy"
-                  render={(routeProps) => {
-                    return <TestEmmy error={this.state.myError} {...routeProps} />;
-                  }}
-                />
-
-                <Route exact path="/random" component={Random} />
-
-                <Route
-                  path="/search"
-                  render={(routeProps) => {
-                    return <Search error={this.state.myError} {...routeProps} />;
-                  }}
-                />
+                
+               
 
                 <Route
                   path="/profile"
@@ -391,12 +355,16 @@ class App extends Component {
                   }}
                 />
 
-            <Route  path="/playlist/:id"  render={(routeProps) => {
+            <Route exact path="/playlist/:id"  render={(routeProps) => {
                 return  <PlaylistDetail   {...routeProps}  />
               }}/>
 
-
+              
+            <Route path="/playlist/:id/edit"  render={(routeProps) => {
+                return  <EditPlaylist  {...routeProps}  />
+              }}/>
                 <Route component={NotFound} />
+              
               </Switch>
             </div>
           );
