@@ -4,7 +4,6 @@ import { API_URL } from "../config";
 import { Link } from "react-router-dom";
 import EditIcon from "@material-ui/icons/Edit";
 import Container from "@material-ui/core/Container";
-
 import Grid from "@material-ui/core/Grid";
 
 export default class PlaylistDetail extends Component {
