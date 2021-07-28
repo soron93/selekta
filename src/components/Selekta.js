@@ -7,13 +7,9 @@ import Container from "@material-ui/core/Container";
 import Tracks from "./SpotifyApi/Tracks";
 import axios from "axios";
 import { API_URL } from "../config";
-<<<<<<< HEAD
-import Profile from './Profile';
-=======
 import Grid from "@material-ui/core/Grid";
 
 //import AudioPlayer from "./Individual/AudioPlayer";
->>>>>>> 0d18bb98e827489921ec27e8aaa5a4c2ab0af5e8
 
 //SPLASHSCREEN HOMEPAGE
 // This screen holds the main feature available to non logged in users and
@@ -48,51 +44,6 @@ class Selekta extends Component {
     return (
       <div>
         <Container maxWidth="sm">
-<<<<<<< HEAD
-          <h1>SELEKTA SPLASH PAGE COMPONENT SHOWING</h1>
-          <p>
-            <SliderSelekta
-              onChange1={this.props.onChange1}
-              onChange2={this.props.onChange2}
-              onChange3={this.props.onChange3}
-              onChange4={this.props.onChange4}
-            />
-          </p>
-          
-          <p>
-            
-           {
-             this.props.user ? <Profile users={this.state.users}/> : "No user signed in"
-           }
-
-          </p>
-
-
-          <p>
-            <h4>Generate your personalized playlist</h4>
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={this.props.onSelekting}
-            >
-              Start Selekting
-            </Button>
-
-            {/* is visible after start selekting is pressed  */}
-            
-            {
-              this.props.tracks.length ? 
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={this.handleSaveButtonClick}
-              >
-                Save Playlist 
-              </Button> : " "
-            }
-  
-             {/* name playlist after selekting   */}
-=======
           <Grid
             container
             direction="column"
@@ -161,7 +112,6 @@ class Selekta extends Component {
             </Grid>
 
             {/* name playlist after selekting   */}
->>>>>>> 0d18bb98e827489921ec27e8aaa5a4c2ab0af5e8
 
             <p>
               {this.props.tracks.length ? (
