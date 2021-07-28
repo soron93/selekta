@@ -26,17 +26,8 @@ class TestEmmy extends Component {
               <Slider />
             </p>
           </p>
-
-         
-
-          <iframe
-            src="https://p.scdn.co/mp3-preview/5da6e7730e5f7b5155f699309a851b80ceea4f55?cid=7ff64ba3320346b3be3b5977db49e2dd"
-            width="300"
-            height="380"
-            frameborder="0"
-            allowtransparency="true"
-            allow="encrypted-media"
-          ></iframe>
+          
+          <iframe src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
           <p>
             <SpotifyButton />
