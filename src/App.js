@@ -30,7 +30,7 @@ import Selekta from "./components/Selekta";
 import SpotifyLogin from "./components/SpotifyLogin/SpotifyLogin";
 import SliderSelekta from './components/Individual/SliderSelekta'
 import SliderTime from './components/Individual/SliderTime'
-
+import PlaylistDetail from "./components/PlaylistDetail";
 
 class App extends Component {
         state = {
@@ -340,11 +340,11 @@ class App extends Component {
             
           
 
-                <Route exact path={"/"} render={() => { 
+                <Route exact path={"/"} render={(routeProps) => { 
                     // "onchange1"  not a ket work a variable name can be anything is being passed down to the  CHILD 
                     // "this.handleChange"  Needs to to be the name of the function above 
                     return <Selekta onSelekting={this.handleSelekting} onChange1={this.handleChange1}
-                    onChange2={this.handleChange2} onChange3={this.handleChange3} onChange4={this.handleChange4} tracks={this.state.tracks}  />;
+                    onChange2={this.handleChange2} onChange3={this.handleChange3} onChange4={this.handleChange4} tracks={this.state.tracks} {...routeProps} />;
                   }}
                 />
 
@@ -378,7 +378,7 @@ class App extends Component {
                 <Route
                   path="/profile"
                   render={(routeProps) => {
-                    return <Profile error={this.state.myError} {...routeProps} />;
+                    return <Profile user={this.state.user} error={this.state.myError} {...routeProps} />;
                   }}
                 />
 
@@ -390,6 +390,11 @@ class App extends Component {
                     );
                   }}
                 />
+
+            <Route  path="/playlist/:id"  render={(routeProps) => {
+                return  <PlaylistDetail   {...routeProps}  />
+              }}/>
+
 
                 <Route component={NotFound} />
               </Switch>

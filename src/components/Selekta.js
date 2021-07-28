@@ -32,7 +32,9 @@ class Selekta extends Component {
     };
     axios
       .post(`${API_URL}/api/create-playlist`, data, { withCredentials: true })
-      .then(() => {})
+      .then(() => {
+        this.props.history.push("/profile") //redirect to profile after save
+      })
       .catch(() => {});
   };
 
