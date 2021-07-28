@@ -18,6 +18,7 @@ import { ThemeProvider } from "@material-ui/styles";
 
 //CRUD
 import AddProfile from "./components/AddProfile";
+import CrudEditForm from "./components/CrudEditForm";
 import CrudList from "./components/CrudList";
 import CrudDetail from "./components/CrudDetail";
 
@@ -152,7 +153,7 @@ class App extends Component {
         }
 
 
-        handleEditTodo = (event, crud) => {
+        handleEditCrud = (event, crud) => {
           event.preventDefault()
       
           // pass a second parameter to the patch for sending info to your server inside req.body
@@ -286,6 +287,8 @@ class App extends Component {
             
           } else {
             this.props.history.push("/signin");
+            
+            
           }
           console.log("On Selekting");
         };
@@ -369,7 +372,7 @@ class App extends Component {
                 /> */}
 
 
-              <Route exact path={'/cude/:crudId'} render={(routeProps) => {
+              <Route exact path={'/crud/:crudId'} render={(routeProps) => {
                 return <CrudDetail user={this.state.user} {...routeProps} onDelete={this.handleDeleteCrud} />
               }} />
                           
@@ -378,7 +381,9 @@ class App extends Component {
               }} /> */}
 
 
-
+              <Route path={'/crud/:crudId/edit'} render={(routeProps) => {
+                return <CrudEditForm {...routeProps}  onEdit={this.handleEditCrud} />
+              }} />
 
 
               <Route path={'/add-profile'} render={() => {

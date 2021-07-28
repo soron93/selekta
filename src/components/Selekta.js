@@ -69,7 +69,7 @@ handleSaveButtonClick = () => {
             </Button>
 
             {/* is visible after start selekting is pressed  */}
-
+            
             {
               this.props.tracks.length ? 
               <Button

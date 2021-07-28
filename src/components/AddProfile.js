@@ -8,7 +8,7 @@ class AddProfile extends Component {
 
 		if (!this.props.user) {
 			//redirect to sigin page
-			return <Redirect to={'/signin'}/>
+			return <Redirect to={'/'}/>
 		}
 
 
