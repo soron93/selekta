@@ -23,40 +23,21 @@ export default class PlaylistDetail extends Component {
         })
     }
     render() {
-
-
         if (!this.state.playlist) {
             return <p>Loading . . . </p>;
           }
-
-
         return (
-
             <div>
                 Playlist Detail
                 {this.state.playlist.name}
                 
                 <Link to={`/playlist/${this.state.playlist._id}/edit`}><button>Edit Profile</button></Link>
-                
-                
-                
-                
                 {
             this.state.playlist.tracks.map((track) => {
               return <p>{track.name}</p>
             })
           }
-              
-
-
-
-            </div>
-
-
-
-
-
-
+    </div>
         )
     }
 }
