@@ -26,17 +26,27 @@ class Selekta extends Component {
   };
 
   handleSaveButtonClick = () => {
-    let data = {
-      playlistName: this.state.playlistName,
-      tracks: this.props.tracks,
-    };
-    axios
-      .post(`${API_URL}/api/create-playlist`, data, { withCredentials: true })
-      .then(() => {
-        this.props.history.push("/profile") //redirect to profile after save
-      })
-      .catch(() => {});
-  };
+  
+    if (this.props.user) {
+      let data = {
+        playlistName: this.state.playlistName,
+        tracks: this.props.tracks,
+      };
+      axios
+        .post(`${API_URL}/api/create-playlist`, data, { withCredentials: true })
+        .then(() => {
+          this.props.history.push("/profile") //redirect to profile after save
+        })
+        .catch(() => {});
+    
+     
+            
+    } else {
+      this.props.history.push("/signin");
+    
+    }
+
+  }
 
   render() {
     console.log("test this SPLASH SCREEN");

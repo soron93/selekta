@@ -32,6 +32,7 @@ import SpotifyLogin from "./components/SpotifyLogin/SpotifyLogin";
 import SliderSelekta from './components/Individual/SliderSelekta'
 import SliderTime from './components/Individual/SliderTime'
 import PlaylistDetail from "./components/PlaylistDetail";
+import EditPlaylist from "./components/EditPlaylist";
 
 class App extends Component {
         state = {
@@ -264,32 +265,28 @@ class App extends Component {
 
         // SELEKTA HANDELS
         handleSelekting = () => {
-          if (this.state.user) {
-            let audio_features = {
-              min_danceability:this.state.setValue1[0],
-              max_danceability:this.state.setValue1[1],
-              min_acousticness:this.state.setValue2[0],
-              max_acousticness:this.state.setValue2[1],
-              min_speechiness:this.state.setValue3[0],
-              max_speechiness:this.state.setValue3[1],
-              min_popularity:this.state.setValue4[0],
-              max_popularity:this.state.setValue4[1]
-            }
-            axios.post( `${API_URL}/api/generate-playlist`, audio_features, { withCredentials: true } )
-            .then((response) => {
-              console.log(response.data)
-              this.setState({tracks:response.data.tracks})
-            })
-            .catch(() => {
-              console.log("post fail");
-            })
 
-            
-          } else {
-            this.props.history.push("/signin");
-            
-            
+          let audio_features = {
+            min_danceability:this.state.setValue1[0],
+            max_danceability:this.state.setValue1[1],
+            min_acousticness:this.state.setValue2[0],
+            max_acousticness:this.state.setValue2[1],
+            min_speechiness:this.state.setValue3[0],
+            max_speechiness:this.state.setValue3[1],
+            min_popularity:this.state.setValue4[0],
+            max_popularity:this.state.setValue4[1]
           }
+          axios.post( `${API_URL}/api/generate-playlist`, audio_features, { withCredentials: true } )
+          .then((response) => {
+            console.log(response.data)
+            this.setState({tracks:response.data.tracks})
+          })
+          .catch(() => {
+            console.log("post fail");
+          })
+
+
+          
           console.log("On Selekting");
         };
 
@@ -347,11 +344,12 @@ class App extends Component {
                     // "onchange1"  not a ket work a variable name can be anything is being passed down to the  CHILD 
                     // "this.handleChange"  Needs to to be the name of the function above 
                     return <Selekta onSelekting={this.handleSelekting} onChange1={this.handleChange1}
-                    onChange2={this.handleChange2} onChange3={this.handleChange3} onChange4={this.handleChange4} tracks={this.state.tracks} {...routeProps} />;
+                    onChange2={this.handleChange2} onChange3={this.handleChange3} onChange4={this.handleChange4} tracks={this.state.tracks} {...routeProps} 
+                    user={this.state.user}/>;
                   }}
                 />
 
-  
+                  
 
               <Route  path="/signin"  render={(routeProps) => {
                 return  <SignIn  error={this.state.myError} onSignIn={this.handleSignIn} {...routeProps}  />
@@ -394,11 +392,14 @@ class App extends Component {
                   }}
                 />
 
-            <Route  path="/playlist/:id"  render={(routeProps) => {
+            <Route exact path="/playlist/:id"  render={(routeProps) => {
                 return  <PlaylistDetail   {...routeProps}  />
               }}/>
 
-
+              
+            <Route path="/playlist/:id/edit"  render={(routeProps) => {
+                return  <EditPlaylist  {...routeProps}  />
+              }}/>
                 <Route component={NotFound} />
               
               </Switch>
