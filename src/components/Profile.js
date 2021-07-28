@@ -1,14 +1,11 @@
 import React, { Component } from "react";
-//import {Link} from 'react-router-dom'
-import SpotifyGetPlaylists from "./SpotifyApi/SpotifyGetPlaylists";
-import SavePlaylist from "./SavePlaylist";
-import Container from "@material-ui/core/Container";
-import SliderTime from "./Individual/SliderTime";
-import {Button} from  'react-bootstrap'
-import {Redirect} from 'react-router-dom'
 import axios from "axios";
 import { API_URL } from "../config";
 import {Link} from  'react-router-dom'
+import EditIcon from "@material-ui/icons/Edit";
+import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
+//MATERIAL 
 
 //USER PROFILE IN THE APP PRIVATE PAGE
 //SHOULD SHOW A LIST OF SAVED PLAY LIST
@@ -37,11 +34,24 @@ class Profile extends Component {
     return (
       <div>
         <Container maxWidth="sm">
+        <Grid container spacing={2} xs={12}
+            direction="column"
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <Grid item  xs={12}
+            container
+            direction="column"
+            justifyContent="space-between"
+           >
           {
+            
             this.state.playlists.map((playlist) => {
-              return <p><Link to={`/playlist/${playlist._id}`}>{playlist.name}</Link></p>
+              return <p><Link to={`/playlist/${playlist._id}`}> <EditIcon /></Link> {playlist.name}</p>
             })
           }
+          </Grid>
+          </Grid>
         </Container>
       </div>
     );

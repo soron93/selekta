@@ -7,30 +7,9 @@ import SignUp from "./components/SignUp";
 import { API_URL } from "./config";
 import NotFound from "./components/NotFound";
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import Search from "./components/Search";
-import { Paper, Grid } from '@material-ui/core';
-
-
-
-// import { ThemeProvider } from "@material-ui/styles";
-
-
-//CRUD
-import AddProfile from "./components/AddProfile";
-import CrudEditForm from "./components/CrudEditForm";
-import CrudList from "./components/CrudList";
-import CrudDetail from "./components/CrudDetail";
-
-
-//TEST PAGES
-import TestEmmy from "./components/TestEmmy";
-import Random from "./components/SpotifyApi/Random";
 import Profile from "./components/Profile";
 import Selekta from "./components/Selekta";
 import SpotifyLogin from "./components/SpotifyLogin/SpotifyLogin";
-import SliderSelekta from './components/Individual/SliderSelekta'
-import SliderTime from './components/Individual/SliderTime'
 import PlaylistDetail from "./components/PlaylistDetail";
 import EditPlaylist from "./components/EditPlaylist";
 
@@ -47,8 +26,6 @@ class App extends Component {
           tracks:[],
         };
 
-
-        
         async componentDidMount() {
           try {
             // fetch all the initial crud to show on the home page
@@ -129,7 +106,6 @@ class App extends Component {
             })
       
         }
-
 
         handleDeleteCrud = (crudId) => {
           // delete the todo from the DB
@@ -358,23 +334,6 @@ class App extends Component {
               <Route  path="/signup"  render={(routeProps) => {
                 return  <SignUp onSignUp={this.handleSignUp} {...routeProps}  />
               }}/>
-
-
-                <Route
-                  path="/testemmy"
-                  render={(routeProps) => {
-                    return <TestEmmy error={this.state.myError} {...routeProps} />;
-                  }}
-                />
-
-                <Route exact path="/random" component={Random} />
-
-                <Route
-                  path="/search"
-                  render={(routeProps) => {
-                    return <Search error={this.state.myError} {...routeProps} />;
-                  }}
-                />
 
                 <Route
                   path="/profile"

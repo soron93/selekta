@@ -56,15 +56,12 @@ class Selekta extends Component {
     return (
       <div>
         <Container maxWidth="sm">
-        <h1>Selekta</h1>
-
-          <Grid
-            container
+          <Grid container spacing={2} xs={12}
             direction="column"
             justifyContent="space-between"
             alignItems="center"
           >
-            <Grid item  
+            <Grid item  xs={11}
             container
             direction="column"
             justifyContent="space-between"
@@ -77,27 +74,26 @@ class Selekta extends Component {
                   onChange4={this.props.onChange4}
                 />
               </p>
+              </Grid>
+              <Grid item>
+         
+                <h4>Generate your personalized playlist</h4>
+        
+              </Grid>
+                
+                <Grid item xs={6}>
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      onClick={this.props.onSelekting}>
+                      Start Selekting
+                    </Button>
+             
             </Grid>
-
-            <Grid item
-             container
-            direction="column"
-            justifyContent="space-between"
-            alignItems="center">
-              <p>
-                {/* <h4>Generate your personalized playlist</h4> */}
-                <Button
-                  variant="contained"
-                  color="primary"
-                  onClick={this.props.onSelekting}
-                >
-                  Start Selekting
-                </Button>
-              </p>
-            </Grid>
-            <Grid item>
+            <Grid item xs={6}>
               {/* is visible after start selekting is pressed  */}
               <p>
+             
                 {this.props.tracks.length ? (
                   <TextField
                     onChange={this.handleSave}
@@ -110,7 +106,9 @@ class Selekta extends Component {
                   ""
                 )}
               </p>
-              <div>
+              </Grid>
+              <Grid item xs={6}>
+              
                 {this.props.tracks.length ? (
                   <Button
                     variant="contained"
@@ -122,7 +120,7 @@ class Selekta extends Component {
                 ) : (
                   " "
                 )}
-              </div>
+             
             </Grid>
 
             {/* name playlist after selekting   */}
