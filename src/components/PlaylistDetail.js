@@ -36,28 +36,30 @@ export default class PlaylistDetail extends Component {
           <Grid container spacing={2} xs={12}
             direction="column"
             justifyContent="space-between"
-            alignItems="center"
+           
           >
             <Grid item  xs={6}
             container
             direction="column"
             justifyContent="space-between"
-            alignItems="center">
-         <h4> {this.state.playlist.name}{" "}</h4></Grid>
-         <Grid item  xs={6}
-            container
-            direction="column"
-            justifyContent="space-between"
-            alignItems="center">
-          <Link to={`/playlist/${this.state.playlist._id}/edit`}>
+            
+            >
+            <p>
+           <h4> Edit Playlist</h4>
+           </p>
+           <p><h5> {this.state.playlist.name}{" "}</h5>  <Link to={`/playlist/${this.state.playlist._id}/edit`}>
             <EditIcon />
-          </Link>
-          </Grid>
+          </Link></p>
+         </Grid>
+     
+         
+        
+          
           <Grid item  xs={12}
             container
             direction="column"
             justifyContent="space-between"
-            alignItems="center">
+            >
         {this.state.playlist.tracks.map((track) => {
           return (
             <p>

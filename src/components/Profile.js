@@ -32,6 +32,7 @@ class Profile extends Component {
     console.log("test this");
 
     return (
+
       <div>
         <Container maxWidth="sm">
         <Grid container spacing={2} xs={12}
@@ -44,6 +45,9 @@ class Profile extends Component {
             direction="column"
             justifyContent="space-between"
            >
+           <p>
+           <h4>My Playlists</h4>
+           </p>
           {
             
             this.state.playlists.map((playlist) => {
