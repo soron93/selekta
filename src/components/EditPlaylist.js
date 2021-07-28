@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from "axios";
 import { API_URL } from "../config";
 import {Link} from  'react-router-dom'
+import { Button, TextField } from "@material-ui/core";
 
 class EditPlaylist extends Component {
 
@@ -39,6 +40,27 @@ class EditPlaylist extends Component {
         })
     }
 
+
+    handleChange=(event) =>{
+        let newName = event.target.value
+        let clone = JSON.parse(JSON.stringify(this.state.playlist)) 
+        clone.name = newName
+        this.setState({ playlist:clone})
+    }
+
+
+    handleSave=() =>{
+        let playlistId = this.props.match.params.id 
+        axios.patch( `${API_URL}/api/playlist/${playlistId}`, {name:this.state.playlist.name}, { withCredentials: true } )
+        .then((response) => {
+            this.props.history.push('/profile')
+        })
+        .catch(() => {
+          console.log("get fail");
+        })
+
+    }
+
     render() {
         if (!this.state.playlist) {
             return <p>Loading . . . </p>;
@@ -46,8 +68,15 @@ class EditPlaylist extends Component {
         return (
             <div>
                 Playlist Detail
-                {this.state.playlist.name}
+            
                 
+                <TextField
+                    onChange={this.handleChange}
+                    tracks={this.props.tracks}
+                    id="standard-basic"
+                    name="Save"
+                  value={this.state.playlist.name}/>
+                  <button onClick={this.handleSave} > Save </button>
              
                 {
             this.state.playlist.tracks.map((track) => {
