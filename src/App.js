@@ -347,45 +347,8 @@ class App extends Component {
                     onChange2={this.handleChange2} onChange3={this.handleChange3} onChange4={this.handleChange4} tracks={this.state.tracks}  />;
                   }}
                 />
-{/* 
-                <Route
-                  path="/signin"
-                  render={(routeProps) => {
-                    return (
-                      <SignIn
-                        error={this.state.myError}
-                        onSignIn={this.handleSignIn}
-                        {...routeProps}
-                      />
-                    );
-                  }}
-                />
 
-                <Route
-                  path="/signup"
-                  render={(routeProps) => {
-                    return <SignUp onSignUp={this.handleSignUp} {...routeProps} />;
-                  }}
-                /> */}
-
-
-              <Route exact path={'/cude/:crudId'} render={(routeProps) => {
-                return <CrudDetail user={this.state.user} {...routeProps} onDelete={this.handleDeleteCrud} />
-              }} />
-                          
-                {/* <Route exact path={'/'}  render={() => {
-                return <CrudList  cruds={this.state.cruds} />
-              }} /> */}
-
-
-
-
-
-              <Route path={'/add-profile'} render={() => {
-                 return <AddProfile user={this.state.user} onAdd={this.handleAddCrud}/>
-                }} 
-                />
-
+  
 
               <Route  path="/signin"  render={(routeProps) => {
                 return  <SignIn  error={this.state.myError} onSignIn={this.handleSignIn} {...routeProps}  />
