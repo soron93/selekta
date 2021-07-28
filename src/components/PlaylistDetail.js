@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from "axios";
 import { API_URL } from "../config";
 import {Link} from  'react-router-dom'
-
+import EditIcon from '@material-ui/icons/Edit';
 
 
 export default class PlaylistDetail extends Component {
@@ -34,10 +34,10 @@ export default class PlaylistDetail extends Component {
 
             <div>
                <p> Playlist Detail</p>
-               <p>{this.state.playlist.name}   <Link to={`/playlist/${this.state.playlist._id}/edit`}><button>Edit Playlist</button></Link></p>
+               <p>{this.state.playlist.name}   <Link to={`/playlist/${this.state.playlist._id}/edit`}><EditIcon/></Link></p>
                 {
             this.state.playlist.tracks.map((track) => {
-              return<p> {track.name}</p>
+              return    <p><b>{track.artists[0].name} - {track.name}</b></p>
             })
           }
               

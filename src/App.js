@@ -335,10 +335,6 @@ class App extends Component {
                 return  <SignUp onSignUp={this.handleSignUp} {...routeProps}  />
               }}/>
 
-
-                
-               
-
                 <Route
                   path="/profile"
                   render={(routeProps) => {

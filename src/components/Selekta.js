@@ -57,7 +57,6 @@ class Selekta extends Component {
       <div>
         <Container maxWidth="sm">
           <Grid container spacing={2} xs={12}
-            container
             direction="column"
             justifyContent="space-between"
             alignItems="center"

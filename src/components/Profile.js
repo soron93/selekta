@@ -4,6 +4,8 @@ import axios from "axios";
 import { API_URL } from "../config";
 import {Link} from  'react-router-dom'
 
+//MATERIAL 
+
 //USER PROFILE IN THE APP PRIVATE PAGE
 //SHOULD SHOW A LIST OF SAVED PLAY LIST
 
@@ -33,6 +35,7 @@ class Profile extends Component {
         <Container maxWidth="sm">
         
           {
+            
             this.state.playlists.map((playlist) => {
               return <p><Link to={`/playlist/${playlist._id}`}>{playlist.name}</Link></p>
             })

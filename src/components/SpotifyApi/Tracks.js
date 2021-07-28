@@ -8,10 +8,6 @@ import React, { Component } from 'react';
 
 //import { Link } from 'react-router-dom'
 import SpotifyButton from "../Individual/SpotifyButton";
-import { Link } from 'react-router-dom'
-import ReactAudioPlayer from 'react-audio-player';
-
-import { ThemeProvider } from '@material-ui/core';
 import AudioPlayer from 'material-ui-audio-player';
 //TRIED USING LINK DID NOT WORK, instead of a anchor tag
 
