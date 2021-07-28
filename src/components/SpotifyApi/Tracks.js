@@ -9,7 +9,7 @@ import React, { Component } from 'react';
 //import { Link } from 'react-router-dom'
 import SpotifyButton from "../Individual/SpotifyButton";
 import { Link } from 'react-router-dom'
-// import ReactAudioPlayer from 'react-audio-player';
+import ReactAudioPlayer from 'react-audio-player';
 
 //TRIED USING LINK DID NOT WORK, instead of a anchor tag
 
@@ -30,9 +30,9 @@ class Tracks extends Component {
               {
               track.preview_url ? (
             <div>		
-            {/* <ReactAudioPlayer
+            <ReactAudioPlayer
                   src={track.preview_url}
-                  controls */}
+                  controls
                 />
             </div>
 					) : (
