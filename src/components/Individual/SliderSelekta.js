@@ -31,7 +31,7 @@ const marks2 = [
     label: "Analog",
   },
   {
-    value: 1.0,
+    value: 100,
     label: "Digital",
   },
 ];
@@ -47,7 +47,7 @@ const marks3 = [
     label: "No Talking",
   },
   {
-    value: 1.0,
+    value: 100,
     label: "Mad Vocals",
   },
 ];
@@ -189,7 +189,7 @@ export default function SliderSelekta(props) {
       <Slider
         step={0.1}
         min={0}
-        max={1}
+        max={100}
         getAriaLabel={() => "Minimum distance shift"}
         value={value2}
         onChange={handleChange2}
@@ -201,7 +201,7 @@ export default function SliderSelekta(props) {
       <Slider
         Step={0.1}
         min={0}
-        max={1}
+        max={100}
         getAriaLabel={() => "Minimum distance shift"}
         value={value3}
         onChange={handleChange3}

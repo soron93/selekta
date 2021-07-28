@@ -3,6 +3,9 @@ import axios from "axios";
 import { API_URL } from "../config";
 import {Link} from  'react-router-dom'
 import { Button, TextField } from "@material-ui/core";
+import Container from "@material-ui/core/Container";
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+import SaveAltIcon from '@material-ui/icons/SaveAlt';
 
 class EditPlaylist extends Component {
 
@@ -67,7 +70,7 @@ class EditPlaylist extends Component {
           }
         return (
             <div>
-                Playlist Detail
+                Playlist
             
                 
                 <TextField
@@ -76,15 +79,28 @@ class EditPlaylist extends Component {
                     id="standard-basic"
                     name="Save"
                   value={this.state.playlist.name}/>
-                  <button onClick={this.handleSave} > Save </button>
+                  <button onClick={this.handleSave}> 
+                  <SaveAltIcon/>
+                  {/* Save  */}
+                  </button>
              
+
+                
+                <Container>
+                    
+
                 {
             this.state.playlist.tracks.map((track) => {
               return <p>{track.name} <button onClick={() => {this.handleDelete(track._id)}}>
-              Delete
+              <DeleteForeverIcon/> 
+              {/* Delete */}
               </button></p>
+              
             })
           }
+          
+        
+          </Container>
     </div>
         )
     }

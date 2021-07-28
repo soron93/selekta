@@ -17,6 +17,7 @@ return (
             {/* <Link  style={{marginLeft: '10px'}}  to="/random">Random</Link> */}
 			{/* <Link  style={{marginLeft: '10px'}}  to="/search">Search</Link> */}
             <Button><Link  style={{marginLeft: '10px'}} onClick={props.onLogOut}>Logout</Link></Button>
+			<Button><Link  style={{marginLeft: '10px'}}  to="/profile">Profile</Link></Button>
             </div>
 					) : (
 						<>
@@ -25,7 +26,7 @@ return (
 							<Link  style={{marginLeft: '10px'}}  to="/testemmy">Emmy </Link>
 							<Link  style={{marginLeft: '10px'}}  to="/random">Random</Link>
 							<Link  style={{marginLeft: '10px'}}  to="/search">Search</Link> */}
-							<Button><Link  style={{marginLeft: '10px'}}  to="/profile">Profile</Link></Button>
+							
 					
 					</>
 					)

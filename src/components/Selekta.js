@@ -56,6 +56,7 @@ class Selekta extends Component {
     return (
       <div>
         <Container maxWidth="sm">
+        <h1>SELEKTA</h1>
           <Grid container spacing={2} xs={12}
             direction="column"
             justifyContent="space-between"
@@ -77,7 +78,7 @@ class Selekta extends Component {
               </Grid>
               <Grid item>
          
-                <h4>Generate your personalized playlist</h4>
+                {/* <h4>Generate your personalized playlist</h4> */}
         
               </Grid>
                 
