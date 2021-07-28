@@ -14,6 +14,17 @@ Select scopes
 This endpoint requires authentication, but does not require a specific scope.
 
 */
+let SpotifyWebApi = require('spotify-web-api-node');
+
+spotifyApi.getNewReleases({ limit : 5, offset: 0, country: 'SE' })
+  .then(function(data) {
+    console.log(data.body);
+      done();
+    }, function(err) {
+       console.log("Something went wrong!", err);
+    });
+  });
+
 
 const NewReleases = () => {
 

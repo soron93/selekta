@@ -19,13 +19,13 @@ return (
             </div>
 					) : (
 						<>
-							{/* <Link  style={{marginLeft: '10px'}}  to="/signin">SignIn</Link>
+							<Link  style={{marginLeft: '10px'}}  to="/signin">SignIn</Link>
 							<Link  style={{marginLeft: '10px'}}  to="/signup">SignUp</Link>
 							<Link  style={{marginLeft: '10px'}}  to="/testemmy">Emmy </Link>
 							<Link  style={{marginLeft: '10px'}}  to="/random">Random</Link>
 							<Link  style={{marginLeft: '10px'}}  to="/search">Search</Link>
 							<Link  style={{marginLeft: '10px'}}  to="/profile">Profile</Link>
-					 */}
+					
 					</>
 					)
 				}

@@ -11,29 +11,43 @@ import SpotifyButton from "../Individual/SpotifyButton";
 import { Link } from 'react-router-dom'
 import ReactAudioPlayer from 'react-audio-player';
 
+import {  ThemeProvider } from '@material-ui/core';
+import AudioPlayer from 'material-ui-audio-player';
 //TRIED USING LINK DID NOT WORK, instead of a anchor tag
 
 class Tracks extends Component {
-
+ 
 
   render() {
 
     return (
       <div>
-        <h1>Track List</h1>
+        <h4>Track List</h4>
 
         {this.props.tracks.map((track) => {
           return (
             <div>
-              <p>{track.name}</p>
+              <p>{track.artists[0].name} - {track.name}</p>
               <p>
               {
               track.preview_url ? (
             <div>		
-            <ReactAudioPlayer
+            {/*<ReactAudioPlayer
                   src={track.preview_url}
                   controls
-                />
+                />*/}
+               
+              <AudioPlayer
+               download={false}
+               volume={true}
+                width="auto"
+                hieght="58px"
+                variation="default"
+                autoplay={false}
+                preload="auto"
+                loop={false}
+                src={track.preview_url}/>
+          
             </div>
 					) : (
 						<>
