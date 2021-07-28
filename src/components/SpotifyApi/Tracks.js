@@ -22,7 +22,8 @@ class Tracks extends Component {
 
     return (
       <div>
-        <h4>Track List</h4>
+        {/* <h4>Track List</h4> */}
+        <p></p>
 
         {this.props.tracks.map((track) => {
           return (

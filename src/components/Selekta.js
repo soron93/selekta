@@ -56,6 +56,8 @@ class Selekta extends Component {
     return (
       <div>
         <Container maxWidth="sm">
+        <h1>Selekta</h1>
+
           <Grid
             container
             direction="column"
@@ -83,7 +85,7 @@ class Selekta extends Component {
             justifyContent="space-between"
             alignItems="center">
               <p>
-                <h4>Generate your personalized playlist</h4>
+                {/* <h4>Generate your personalized playlist</h4> */}
                 <Button
                   variant="contained"
                   color="primary"
@@ -115,7 +117,7 @@ class Selekta extends Component {
                     color="primary"
                     onClick={this.handleSaveButtonClick}
                   >
-                    Save Playlist
+                    Save Playlist        
                   </Button>
                 ) : (
                   " "
