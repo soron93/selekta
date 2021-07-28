@@ -9,11 +9,11 @@ import NotFound from "./components/NotFound";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Search from "./components/Search";
-//import { Paper, Grid } from '@material-ui/core';
+import { Paper, Grid } from '@material-ui/core';
+import DarkMode from "./components/DarkMode"
 
 
-
-import { ThemeProvider } from "@material-ui/styles";
+// import { ThemeProvider } from "@material-ui/styles";
 
 
 //CRUD
@@ -341,7 +341,7 @@ class App extends Component {
 
               <Switch>
             
-          
+        
 
                 <Route exact path={"/"} render={() => { 
                     // "onchange1"  not a ket work a variable name can be anything is being passed down to the  CHILD 
@@ -433,7 +433,9 @@ class App extends Component {
                   }}
                 />
 
+<DarkMode/>
                 <Route component={NotFound} />
+              
               </Switch>
             </div>
           );

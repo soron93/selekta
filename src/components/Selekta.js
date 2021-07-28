@@ -7,6 +7,7 @@ import Container from "@material-ui/core/Container";
 import Tracks from "./SpotifyApi/Tracks";
 import axios from "axios";
 import { API_URL } from "../config";
+import Profile from './Profile';
 
 //SPLASHSCREEN HOMEPAGE
 // This screen holds the main feature available to non logged in users and
@@ -58,6 +59,15 @@ handleSaveButtonClick = () => {
             />
           </p>
           
+          <p>
+            
+           {
+             this.props.user ? <Profile users={this.state.users}/> : "No user signed in"
+           }
+
+          </p>
+
+
           <p>
             <h4>Generate your personalized playlist</h4>
             <Button

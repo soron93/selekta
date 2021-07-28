@@ -14,13 +14,8 @@ class Profile extends Component {
     console.log("test this");
 
     return (
-      <div>
-        <Container maxWidth="sm">
-          <h1>PROFILE COMPONENT SHOWING</h1>
-          <SpotifyGetPlaylists />
-          <SavePlaylist/>
-          <SliderTime/>
-        </Container>
+      <div onChange ={this.state.users}>
+           
       </div>
     );
   }
