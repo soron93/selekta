@@ -5,7 +5,7 @@ import { TextField } from "@material-ui/core";
 import SliderTime from "./Individual/SliderSelekta";
 import Container from "@material-ui/core/Container";
 import Toggle from "./Individual/Toggle";
-import SpotifyButton from "./Individual/SpotifyButton";
+
 
 // SAVE PLAYLIST COMPONENT  SHOWING
 //SHOUD DISPLY AFTER GENERATING LIST  

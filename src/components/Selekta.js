@@ -7,39 +7,38 @@ import Container from "@material-ui/core/Container";
 import Tracks from "./SpotifyApi/Tracks";
 import axios from "axios";
 import { API_URL } from "../config";
+<<<<<<< HEAD
 import Profile from './Profile';
+=======
+import Grid from "@material-ui/core/Grid";
+
+//import AudioPlayer from "./Individual/AudioPlayer";
+>>>>>>> 0d18bb98e827489921ec27e8aaa5a4c2ab0af5e8
 
 //SPLASHSCREEN HOMEPAGE
 // This screen holds the main feature available to non logged in users and
 // To save the play list users will need to login
 
 class Selekta extends Component {
+  state = {
+    playlistName: "",
+  };
 
-state = {
-  playlistName:''
+  handleSave = (event) => {
+    console.log(event.target.value);
+    this.setState({ playlistName: event.target.value });
+  };
 
-}
-  
-handleSave = (event) => {
-console.log(event.target.value)
-this.setState({playlistName:event.target.value})
-}
-
-handleSaveButtonClick = () => {
-  let data={
-    playlistName:this.state.playlistName,
-    tracks:this.props.tracks
-  }
-  axios.post(`${API_URL}/api/create-playlist`, data, {withCredentials: true})
-    .then(()=>{
-
-    })
-    .catch(()=>{
-      
-    })
-
-}
-
+  handleSaveButtonClick = () => {
+    let data = {
+      playlistName: this.state.playlistName,
+      tracks: this.props.tracks,
+    };
+    axios
+      .post(`${API_URL}/api/create-playlist`, data, { withCredentials: true })
+      .then(() => {})
+      .catch(() => {});
+  };
 
   render() {
     console.log("test this SPLASH SCREEN");
@@ -49,6 +48,7 @@ handleSaveButtonClick = () => {
     return (
       <div>
         <Container maxWidth="sm">
+<<<<<<< HEAD
           <h1>SELEKTA SPLASH PAGE COMPONENT SHOWING</h1>
           <p>
             <SliderSelekta
@@ -92,23 +92,85 @@ handleSaveButtonClick = () => {
             }
   
              {/* name playlist after selekting   */}
+=======
+          <Grid
+            container
+            direction="column"
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <Grid item  
+            container
+            direction="column"
+            justifyContent="space-between"
+            alignItems="center">
+              <p>
+                <SliderSelekta
+                  onChange1={this.props.onChange1}
+                  onChange2={this.props.onChange2}
+                  onChange3={this.props.onChange3}
+                  onChange4={this.props.onChange4}
+                />
+              </p>
+            </Grid>
 
-              <p></p>
-            {
-              
-              this.props.tracks.length ? <TextField onChange={this.handleSave} tracks={this.props.tracks} 
-              id="standard-basic"
-              label="Name Your Playlist"
-              name="Save"/> : ""
-              
-            }
-          </p>
-           
-          <p>
-            {
-              this.props.tracks.length ?  <Tracks tracks={this.props.tracks} /> : "No Playlist Created"
-            }
-          </p>
+            <Grid item
+             container
+            direction="column"
+            justifyContent="space-between"
+            alignItems="center">
+              <p>
+                <h4>Generate your personalized playlist</h4>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={this.props.onSelekting}
+                >
+                  Start Selekting
+                </Button>
+              </p>
+            </Grid>
+            <Grid item>
+              {/* is visible after start selekting is pressed  */}
+              <p>
+                {this.props.tracks.length ? (
+                  <TextField
+                    onChange={this.handleSave}
+                    tracks={this.props.tracks}
+                    id="standard-basic"
+                    label="Name Your Playlist"
+                    name="Save"
+                  />
+                ) : (
+                  ""
+                )}
+              </p>
+              <div>
+                {this.props.tracks.length ? (
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={this.handleSaveButtonClick}
+                  >
+                    Save Playlist
+                  </Button>
+                ) : (
+                  " "
+                )}
+              </div>
+            </Grid>
+
+            {/* name playlist after selekting   */}
+>>>>>>> 0d18bb98e827489921ec27e8aaa5a4c2ab0af5e8
+
+            <p>
+              {this.props.tracks.length ? (
+                <Tracks tracks={this.props.tracks} />
+              ) : (
+                "No Playlist Created"
+              )}
+            </p>
+          </Grid>
         </Container>
       </div>
     );

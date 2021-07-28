@@ -350,6 +350,7 @@ class App extends Component {
                     onChange2={this.handleChange2} onChange3={this.handleChange3} onChange4={this.handleChange4} tracks={this.state.tracks}  />;
                   }}
                 />
+<<<<<<< HEAD
 {/* 
                 <Route
                   path="/signin"
@@ -390,7 +391,10 @@ class App extends Component {
                  return <AddProfile user={this.state.user} onAdd={this.handleAddCrud}/>
                 }} 
                 />
+=======
+>>>>>>> 0d18bb98e827489921ec27e8aaa5a4c2ab0af5e8
 
+  
 
               <Route  path="/signin"  render={(routeProps) => {
                 return  <SignIn  error={this.state.myError} onSignIn={this.handleSignIn} {...routeProps}  />
