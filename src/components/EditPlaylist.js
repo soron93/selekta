@@ -71,6 +71,10 @@ class EditPlaylist extends Component {
         return (
             <div>
                <Container spacing={2}  maxWidth="sm">
+               <p>
+           <h4> Edit Playlist</h4>
+           </p>
+          <div>
                 <TextField
                     onChange={this.handleChange}
                     tracks={this.props.tracks}
@@ -78,6 +82,8 @@ class EditPlaylist extends Component {
                     name="Save"
                   value={this.state.playlist.name}/>
                   <button onClick={this.handleSave} > Save </button>
+
+                </div>
                   </Container>   
                 {
             this.state.playlist.tracks.map((track) => {
@@ -93,7 +99,7 @@ class EditPlaylist extends Component {
             justifyContent="space-between"
            ><p> <Link onClick={() => {this.handleDelete(track._id)}}>
               <DeleteForeverRoundedIcon/>
-              </Link>{track.name}</p>
+              </Link>{track.artists[0].name} - {track.name}</p>
               </Grid>
               </Grid></Container>   
                      })

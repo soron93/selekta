@@ -63,7 +63,7 @@ export default class PlaylistDetail extends Component {
         {this.state.playlist.tracks.map((track) => {
           return (
             <p>
-                {track.name}
+            {track.artists[0].name} - {track.name}
             </p>
           );
         })}
