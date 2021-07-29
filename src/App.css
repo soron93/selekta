@@ -49,7 +49,7 @@ h1 {
 
 /* HTML CSS JSResult Skip Results Iframe
 EDIT ON */
- /* body {
+ body {
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
@@ -65,24 +65,5 @@ EDIT ON */
   100% {
     background-position: 0% 50%;
   }
-}  */
+} 
 
-
-/* .dark,
-.dark * {
-    background-color: #222;
-    color: #e6e6e6;
-    border-color: #e6e6e6;
-} */
-
-
-
-/* @use "@material/slider/styles";
-
-.slidecontainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-} */
