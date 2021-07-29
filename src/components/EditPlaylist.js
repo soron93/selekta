@@ -7,6 +7,8 @@ import DeleteForeverRoundedIcon from '@material-ui/icons/DeleteForeverRounded';
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
+import LottieControl from "./Loading/LottieControl";
+import notFound from "../animation/notFound.json";
 
 class EditPlaylist extends Component {
 
@@ -67,8 +69,12 @@ class EditPlaylist extends Component {
 
     render() {
         if (!this.state.playlist) {
-            return <p>Loading . . . </p>;
+          return 
+          
+          <LottieControl width={400} height={400} animation={notFound} /> 
+          
           }
+
         return (
             <div>
                <Container spacing={2}  maxWidth="sm">

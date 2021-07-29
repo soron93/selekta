@@ -1,6 +1,5 @@
-
-import React from 'react';
-import Paper from '@material-ui/core/Paper';
+import React from "react";
+import Paper from "@material-ui/core/Paper";
 import { makeStyles } from "@material-ui/core/styles";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
@@ -26,8 +25,6 @@ export default function MyNav(props) {
   };
 
   return (
-
-	
     <Paper square className={classes.root}>
       <Tabs
         value={value}
@@ -36,18 +33,14 @@ export default function MyNav(props) {
         indicatorColor="secondary"
         textColor="secondary"
         aria-label="icon label tabs example"
-		justifyContent="center"
-  		alignItems="center"
-
+        justifyContent="center"
+        alignItems="center"
       >
-     
-
-	
-       { props.user ? (
+        {props.user ? (
           <div>
-          <Link to="/">
-          <Tab icon={<TuneRoundedIcon />} label="SELEKTA" />
-        </Link>
+            <Link to="/">
+              <Tab icon={<TuneRoundedIcon />} label="SELEKTA" />
+            </Link>
             <Link to="/profile">
               <Tab icon={<QueueMusicRoundedIcon />} label="PROFILE" />
             </Link>
@@ -57,13 +50,12 @@ export default function MyNav(props) {
           </div>
         ) : (
           <>
-          <Link to="/">
-          <Tab icon={<TuneRoundedIcon />} label="SELEKTA" />
-        </Link>
+            <Link to="/">
+              <Tab icon={<TuneRoundedIcon />} label="SELEKTA" />
+            </Link>
             <Link to="/signin">
               <Tab icon={<AccountCircleRoundedIcon />} label="SIGNIN" />
             </Link>
-          
           </>
         )}
       </Tabs>

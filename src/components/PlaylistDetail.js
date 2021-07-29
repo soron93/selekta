@@ -7,6 +7,8 @@ import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import SpotifyButton from "./Individual/SpotifyButton";
 import AudioPlayer from "material-ui-audio-player";
+import LottieControl from "./Loading/LottieControl";
+import notFound from "../animation/notFound.json";
 
 export default class PlaylistDetail extends Component {
   state = {
@@ -29,7 +31,11 @@ export default class PlaylistDetail extends Component {
 
   render() {
     if (!this.state.playlist) {
-      return <p>Loading . . . </p>;
+      return 
+      <LottieControl width={400} height={400} animation={notFound} /> 
+     
+      
+      
     }
 
     return (
