@@ -14,7 +14,7 @@ return (
 			<Nav  className="mr-auto">
 			<Link to="/">
 				<TuneRoundedIcon/>
-				{/* Selekta */}
+				Selekta
 				</Link>
 				{
 					props.user ? (
@@ -26,12 +26,12 @@ return (
 			
 			<Link  style={{marginLeft: '10px'}}  to="/profile">
 				<QueueMusicRoundedIcon/>
-				{/* Profile */}
+				Profile
 			</Link>			
 
             <Link  style={{marginLeft: '10px'}} onClick={props.onLogOut}>
 				<ExitToAppRoundedIcon/>
-				{/* Logout */}
+				Logout
 			</Link>
 
             </div>

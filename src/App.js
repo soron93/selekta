@@ -111,7 +111,7 @@ class App extends Component {
           // delete the todo from the DB
           axios.delete(`${API_URL}/api/cruds/${crudId}`, {withCredentials: true})
             .then(() => {
-              // and then also filter and remove the todo from the local state
+              // and then also filter and remove the item from the local state
               let filteredCruds = this.state.cruds.filter((crud) => {
                 return crud._id !== crudId
               })

@@ -70,31 +70,42 @@ class EditPlaylist extends Component {
           }
         return (
             <div>
-                Playlist
+                {/* Playlist */}
             
                 
-                <TextField
+                  <TextField
                     onChange={this.handleChange}
                     tracks={this.props.tracks}
                     id="standard-basic"
                     name="Save"
                   value={this.state.playlist.name}/>
-                  <button onClick={this.handleSave}> 
+                  <Button 
+                  
+                  variant="contained"
+                    color="primary"
+                  onClick={this.handleSave}> 
                   <SaveAltIcon/>
-                  {/* Save  */}
-                  </button>
+                  Save 
+                  </Button>
              
 
                 
                 <Container>
                     
 
+
+
+
+
                 {
             this.state.playlist.tracks.map((track) => {
-              return <p>{track.name} <button onClick={() => {this.handleDelete(track._id)}}>
+              return <p>{track.name} <Button 
+              variant="contained"
+              color="primary"
+              onClick={() => {this.handleDelete(track._id)}}>
               <DeleteForeverIcon/> 
               {/* Delete */}
-              </button></p>
+              </Button></p>
               
             })
           }
