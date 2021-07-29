@@ -56,7 +56,7 @@ class Selekta extends Component {
     return (
       <div>
         <Container maxWidth="sm">
-        <h1>SELEKTA</h1>
+        {/* <h1>SELEKTA</h1> */}
           <Grid container spacing={2} xs={12}
             direction="column"
             justifyContent="space-between"
