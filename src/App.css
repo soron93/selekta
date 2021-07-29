@@ -38,9 +38,21 @@
   }
 }
 
-@use "@material/slider/styles";
+h1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-/* .slidecontainer {
+}
+
+
+
+
+
+/* @use "@material/slider/styles";
+
+.slidecontainer {
   display: flex;
   flex-direction: column;
   align-items: center;

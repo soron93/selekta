@@ -3,9 +3,9 @@ import axios from "axios";
 import { API_URL } from "../config";
 import {Link} from  'react-router-dom'
 import { Button, TextField } from "@material-ui/core";
-import DeleteForeverRoundedIcon from '@material-ui/icons/DeleteForeverRounded';
 import Container from "@material-ui/core/Container";
-import Grid from "@material-ui/core/Grid";
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+import SaveAltIcon from '@material-ui/icons/SaveAlt';
 
 class EditPlaylist extends Component {
 
@@ -70,41 +70,37 @@ class EditPlaylist extends Component {
           }
         return (
             <div>
-               <Container spacing={2}  maxWidth="sm">
-               <p>
-           <h4> Edit Playlist</h4>
-           </p>
-          <div>
+                Playlist
+            
+                
                 <TextField
                     onChange={this.handleChange}
                     tracks={this.props.tracks}
                     id="standard-basic"
                     name="Save"
                   value={this.state.playlist.name}/>
-                  <button onClick={this.handleSave} > Save </button>
+                  <button onClick={this.handleSave}> 
+                  <SaveAltIcon/>
+                  {/* Save  */}
+                  </button>
+             
 
-                </div>
-                  </Container>   
+                
+                <Container>
+                    
+
                 {
             this.state.playlist.tracks.map((track) => {
-              return  <Container maxWidth="sm">
-        <Grid container spacing={2} xs={12}
-            direction="column"
-            justifyContent="space-between"
-            alignItems="center"
-          >
-            <Grid item  xs={12}
-            container
-            direction="column"
-            justifyContent="space-between"
-           ><p> <Link onClick={() => {this.handleDelete(track._id)}}>
-              <DeleteForeverRoundedIcon/>
-              </Link>{track.artists[0].name} - {track.name}</p>
-              </Grid>
-              </Grid></Container>   
-                     })
+              return <p>{track.name} <button onClick={() => {this.handleDelete(track._id)}}>
+              <DeleteForeverIcon/> 
+              {/* Delete */}
+              </button></p>
+              
+            })
           }
           
+        
+          </Container>
     </div>
         )
     }
