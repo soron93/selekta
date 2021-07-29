@@ -8,13 +8,21 @@ import { ThemeProvider } from '@material-ui/styles';
 //   overrides:{
 //     MuiSlider: {
 //       thumb:{
-//       color: "yellow",
+//       // color: "purple",
+//       height: 24,
+//     width: 24,
 //       },
 //       track: {
-//         color: 'red'
+//         // color: 'purple'
 //       },
 //       rail: {
-//         color: 'black'
+//         // color: 'purple',
+//         height: 8,
+//         borderRadius: 4
+//       // height: 4,
+//       // width: 400,
+//       //   borderRadius: 24,
+//       //   opacity: 1,
 //       }
 //     }
 // }
@@ -238,10 +246,10 @@ export default function SliderSelekta(props) {
         disableSwap
         marks={marks4}
       />
-{/* 
-<ThemeProvider theme={muiTheme}>
+
+{/* <ThemeProvider theme={muiTheme}>
       <Slider min={18} max={90} defaultValue={40} />
-    </ThemeProvider> */}
+    </ThemeProvider>  */}
 
     </Box>
   );

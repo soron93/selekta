@@ -379,7 +379,7 @@ class App extends Component {
 
 
 
-                <DarkMode/>
+                {/* <DarkMode/> */}
                  
 
             </div>

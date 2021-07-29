@@ -35,7 +35,7 @@ export default function MyNav(props) {
         textColor="secondary"
         aria-label="icon label tabs example"
       >
-        <Link to="/selekta">
+        <Link to="/Selekta">
           <Tab icon={<TuneRoundedIcon />} label="SELEKTA" />
         </Link>
 

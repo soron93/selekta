@@ -13,8 +13,8 @@ const App = () => {
 
   const theme = createMuiTheme({
     palette: {
-    type: darkMode ? 'light' : 'dark',
-    //   type: darkMode ? 'dark' : 'light',
+    // type: darkMode ? 'light' : 'dark',
+      type: darkMode ? 'dark' : 'light',
     },
   });
 
