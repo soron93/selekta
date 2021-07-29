@@ -63,9 +63,7 @@ export default function MyNav(props) {
             <Link to="/signin">
               <Tab icon={<AccountCircleRoundedIcon />} label="SIGNIN" />
             </Link>
-            <Link to="/signup">
-              <Tab icon={<AccountCircleRoundedIcon />} label="SIGNUP" />
-            </Link>
+          
           </>
         )}
       </Tabs>
