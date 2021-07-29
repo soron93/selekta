@@ -5,6 +5,8 @@ import {Link} from  'react-router-dom'
 import EditIcon from "@material-ui/icons/Edit";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+
 //MATERIAL 
 
 //USER PROFILE IN THE APP PRIVATE PAGE
@@ -33,6 +35,7 @@ class Profile extends Component {
 
     return (
       <div>
+       
         <Container maxWidth="sm">
         <Grid container spacing={2} xs={12}
             direction="column"
@@ -45,11 +48,13 @@ class Profile extends Component {
             justifyContent="space-between"
            >
           {
-            
             this.state.playlists.map((playlist) => {
               return <p><Link to={`/playlist/${playlist._id}`}> <EditIcon /></Link> {playlist.name}</p>
             })
           }
+
+
+          
           </Grid>
           </Grid>
         </Container>
