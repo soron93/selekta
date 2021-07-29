@@ -48,10 +48,10 @@ export default function MyNav(props) {
           <Link to="/">
           <Tab icon={<TuneRoundedIcon />} label="SELEKTA" />
         </Link>
-            <Link to="/">
+            <Link to="/profile">
               <Tab icon={<QueueMusicRoundedIcon />} label="PROFILE" />
             </Link>
-            <Link to="/profile" onClick={props.onLogOut}>
+            <Link to="/signin" onClick={props.onLogOut}>
               <Tab icon={<ExitToAppRoundedIcon />} label="LOGOUT" />
             </Link>
           </div>
