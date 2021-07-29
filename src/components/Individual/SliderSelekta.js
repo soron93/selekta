@@ -20,15 +20,15 @@ import { ThemeProvider } from '@material-ui/styles';
 // }
 // });
 
-//BELOW MATERIAL UI IMPORT CODE 
+//BELOW MATERIAL UI IMPORT CODE
 
 //https://developer.spotify.com/documentation/web-api/reference/#object-audiofeaturesobject
 
 const marks1 = [
-    //DANCABILITY CHILL VS AT CLUB SLIDER VALUE AND LABEL
-    //Chilling Vs At Club
-    //min_danceability 0.0 max_danceability 1.0
-    //Danceability: Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is most danceable.
+  //DANCABILITY CHILL VS AT CLUB SLIDER VALUE AND LABEL
+  //Chilling Vs At Club
+  //min_danceability 0.0 max_danceability 1.0
+  //Danceability: Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is most danceable.
   {
     value: 0.0,
     label: "Chilling",
@@ -40,10 +40,10 @@ const marks1 = [
 ];
 
 const marks2 = [
-      //ANAGOL VS DIGITAL  SLIDER VALUE AND LABEL
-    //Analog vs Digital
-      //min_acousticness 0.0 max_acousticness 1.0
-      //Acousticness: A measure from 0.0 to 1.0 of whether the track is acoustic.
+  //ANAGOL VS DIGITAL  SLIDER VALUE AND LABEL
+  //Analog vs Digital
+  //min_acousticness 0.0 max_acousticness 1.0
+  //Acousticness: A measure from 0.0 to 1.0 of whether the track is acoustic.
   {
     value: 0.0,
     label: "Analog",
@@ -71,9 +71,9 @@ const marks3 = [
 ];
 
 const marks4 = [
-   //POPULARITY SLIDER VALUE AND LABEL
-   //Loca VS World  Famous
-   //min_popularity 01 //max_popularity 100
+  //POPULARITY SLIDER VALUE AND LABEL
+  //Loca VS World  Famous
+  //min_popularity 01 //max_popularity 100
   {
     value: 0,
     label: "Local",
@@ -103,17 +103,16 @@ export default function SliderSelekta(props) {
       if (activeThumb === 0) {
         const clamped = Math.min(newValue[0], 1.0 - minDistance);
         setValue1([clamped, clamped + minDistance]);
-        props.onChange1([clamped, clamped + minDistance]) // saves the value 
+        props.onChange1([clamped, clamped + minDistance]); // saves the value
       } else {
         const clamped = Math.max(newValue[1], minDistance);
         setValue1([clamped - minDistance, clamped]);
-        props.onChange1([clamped - minDistance, clamped]) // saves the value 
+        props.onChange1([clamped - minDistance, clamped]); // saves the value
       }
     } else {
-      setValue1(newValue); 
-      props.onChange1(newValue)
-       // NOTS SURE ABOUT THIS  do we need to add it here  got a compile error 
-     
+      setValue1(newValue);
+      props.onChange1(newValue);
+      // NOTS SURE ABOUT THIS  do we need to add it here  got a compile error
     }
   };
 
@@ -129,16 +128,15 @@ export default function SliderSelekta(props) {
       if (activeThumb === 0) {
         const clamped = Math.min(newValue[0], 1.0 - minDistance);
         setValue2([clamped, clamped + minDistance]);
-        props.onChange2([clamped, clamped + minDistance]) // saves the value 
+        props.onChange2([clamped, clamped + minDistance]); // saves the value
       } else {
         const clamped = Math.max(newValue[1], minDistance);
         setValue2([clamped - minDistance, clamped]);
-        props.onChange2([clamped - minDistance, clamped]) // saves the value 
-
+        props.onChange2([clamped - minDistance, clamped]); // saves the value
       }
     } else {
       setValue2(newValue);
-      props.onChange2(newValue)
+      props.onChange2(newValue);
     }
   };
 
@@ -153,15 +151,15 @@ export default function SliderSelekta(props) {
       if (activeThumb === 0) {
         const clamped = Math.min(newValue[0], 1.0 - minDistance);
         setValue3([clamped, clamped + minDistance]);
-        props.onChange3([clamped, clamped + minDistance]) // saves the value 
+        props.onChange3([clamped, clamped + minDistance]); // saves the value
       } else {
         const clamped = Math.max(newValue[1], minDistance);
         setValue3([clamped - minDistance, clamped]);
-        props.onChange3([clamped - minDistance, clamped]) // saves the value 
+        props.onChange3([clamped - minDistance, clamped]); // saves the value
       }
     } else {
       setValue3(newValue);
-      props.onChange3(newValue)
+      props.onChange3(newValue);
     }
   };
 
@@ -176,20 +174,20 @@ export default function SliderSelekta(props) {
       if (activeThumb === 0) {
         const clamped = Math.min(newValue[0], 1.0 - minDistance);
         setValue4([clamped, clamped + minDistance]);
-        props.onChange4([clamped, clamped + minDistance]) // saves the value 
+        props.onChange4([clamped, clamped + minDistance]); // saves the value
       } else {
         const clamped = Math.max(newValue[1], minDistance);
         setValue4([clamped - minDistance, clamped]);
-        props.onChange4([clamped - minDistance, clamped]) // saves the value 
+        props.onChange4([clamped - minDistance, clamped]); // saves the value
       }
     } else {
       setValue4(newValue);
-      props.onChange4(newValue)
+      props.onChange4(newValue);
     }
   };
 
   return (
-     //RENDERING SLIDERS
+    //RENDERING SLIDERS
     <Box sx={{ width: 300 }}>
       <Slider
         step={0.1}
@@ -203,7 +201,7 @@ export default function SliderSelekta(props) {
         disableSwap
         marks={marks1}
       />
-     
+
       <Slider
         step={0.1}
         min={0}

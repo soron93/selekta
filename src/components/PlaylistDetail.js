@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import EditIcon from "@material-ui/icons/Edit";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
+import SpotifyButton from "./Individual/SpotifyButton";
+import AudioPlayer from "material-ui-audio-player";
 
 export default class PlaylistDetail extends Component {
   state = {
@@ -62,9 +64,42 @@ export default class PlaylistDetail extends Component {
             >
         {this.state.playlist.tracks.map((track) => {
           return (
-            <p>
-            {track.artists[0].name} - {track.name}
-            </p>
+            <div>
+              <p>
+                <b>
+                  {track.artists[0].name} - {track.name}
+                </b>
+              </p>
+              <p>
+                {track.preview_url ? (
+                  <div>
+                    <AudioPlayer
+                      download={false}
+                      volume={true}
+                      width="auto"
+                      hieght="58px"
+                      variation="default"
+                      autoplay={false}
+                      preload="auto"
+                      loop={false}
+                      src={track.preview_url}
+                    />
+                  </div>
+                ) : (
+                  <>Preview not available</>
+                )}
+              </p>
+
+              <p>
+                <span>
+                  Listen on
+                  <a href={track.external_urls.spotify} target="_blank">
+                    {" "}
+                    <SpotifyButton />
+                  </a>
+                </span>
+              </p>
+            </div>
           );
         })}
         </Grid>
