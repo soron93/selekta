@@ -2,10 +2,11 @@ import React, { Component } from 'react'
 import axios from "axios";
 import { API_URL } from "../config";
 import {Link} from  'react-router-dom'
-import { Button, TextField } from "@material-ui/core";
+import { TextField } from "@material-ui/core";
+import DeleteForeverRoundedIcon from '@material-ui/icons/DeleteForeverRounded';
 import Container from "@material-ui/core/Container";
-import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
-import SaveAltIcon from '@material-ui/icons/SaveAlt';
+import Grid from "@material-ui/core/Grid";
+import Button from "@material-ui/core/Button";
 
 class EditPlaylist extends Component {
 
@@ -70,48 +71,47 @@ class EditPlaylist extends Component {
           }
         return (
             <div>
-                {/* Playlist */}
-            
-                
-                  <TextField
+               <Container spacing={2}  maxWidth="sm">
+               <p>
+           <h4> Edit Playlist</h4>
+           </p>
+          <div>
+                <TextField
                     onChange={this.handleChange}
                     tracks={this.props.tracks}
                     id="standard-basic"
                     name="Save"
                   value={this.state.playlist.name}/>
-                  <Button 
-                  
-                  variant="contained"
+                   <Button
+                    variant="contained"
                     color="primary"
-                  onClick={this.handleSave}> 
-                  <SaveAltIcon/>
-                  Save 
+                    onClick={this.handleSaveButtonClick}
+                  >
+                    Save Playlist        
                   </Button>
-             
 
-                
-                <Container>
-                    
-
-
-
-
-
+                </div>
+                  </Container>   
                 {
             this.state.playlist.tracks.map((track) => {
-              return <p>{track.name} <Button 
-              variant="contained"
-              color="primary"
-              onClick={() => {this.handleDelete(track._id)}}>
-              <DeleteForeverIcon/> 
-              {/* Delete */}
-              </Button></p>
-              
-            })
+              return  <Container maxWidth="sm">
+        <Grid container spacing={2} xs={12}
+            direction="column"
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <Grid item  xs={12}
+            container
+            direction="column"
+            justifyContent="space-between"
+           ><p> <Button onClick={() => {this.handleDelete(track._id)}}>
+              <DeleteForeverRoundedIcon/>
+              </Button>{track.artists.name} - {track.name}</p>
+              </Grid>
+              </Grid></Container>   
+                     })
           }
           
-        
-          </Container>
     </div>
         )
     }
