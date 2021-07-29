@@ -34,6 +34,7 @@ class Profile extends Component {
     console.log("test this");
 
     return (
+
       <div>
        
         <Container maxWidth="sm">
@@ -47,6 +48,9 @@ class Profile extends Component {
             direction="column"
             justifyContent="space-between"
            >
+           <p>
+           <h4>My Playlists</h4>
+           </p>
           {
             this.state.playlists.map((playlist) => {
               return <p><Link to={`/playlist/${playlist._id}`}> <EditIcon /></Link> {playlist.name}</p>

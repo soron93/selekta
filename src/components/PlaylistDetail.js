@@ -4,7 +4,6 @@ import { API_URL } from "../config";
 import { Link } from "react-router-dom";
 import EditIcon from "@material-ui/icons/Edit";
 import Container from "@material-ui/core/Container";
-
 import Grid from "@material-ui/core/Grid";
 
 export default class PlaylistDetail extends Component {
@@ -37,32 +36,34 @@ export default class PlaylistDetail extends Component {
           <Grid container spacing={2} xs={12}
             direction="column"
             justifyContent="space-between"
-            alignItems="center"
+           
           >
             <Grid item  xs={6}
             container
             direction="column"
             justifyContent="space-between"
-            alignItems="center">
-         <h4> {this.state.playlist.name}{" "}</h4></Grid>
-         <Grid item  xs={6}
-            container
-            direction="column"
-            justifyContent="space-between"
-            alignItems="center">
-          <Link to={`/playlist/${this.state.playlist._id}/edit`}>
+            
+            >
+            <p>
+           <h4> Edit Playlist</h4>
+           </p>
+           <p><h5> {this.state.playlist.name}{" "}</h5>  <Link to={`/playlist/${this.state.playlist._id}/edit`}>
             <EditIcon />
-          </Link>
-          </Grid>
+          </Link></p>
+         </Grid>
+     
+         
+        
+          
           <Grid item  xs={12}
             container
             direction="column"
             justifyContent="space-between"
-            alignItems="center">
+            >
         {this.state.playlist.tracks.map((track) => {
           return (
             <p>
-                {track.name}
+            {track.artists[0].name} - {track.name}
             </p>
           );
         })}
