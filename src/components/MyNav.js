@@ -26,6 +26,8 @@ export default function MyNav(props) {
   };
 
   return (
+
+	
     <Paper square className={classes.root}>
       <Tabs
         value={value}
@@ -34,15 +36,19 @@ export default function MyNav(props) {
         indicatorColor="secondary"
         textColor="secondary"
         aria-label="icon label tabs example"
+		justifyContent="center"
+  		alignItems="center"
+
       >
-        <Link to="/selekta">
-          <Tab icon={<TuneRoundedIcon />} label="SELEKTA" />
-        </Link>
+     
 
 	
        { props.user ? (
           <div>
-            <Link to="/profile">
+          <Link to="/">
+          <Tab icon={<TuneRoundedIcon />} label="SELEKTA" />
+        </Link>
+            <Link to="/">
               <Tab icon={<QueueMusicRoundedIcon />} label="PROFILE" />
             </Link>
             <Link to="/profile" onClick={props.onLogOut}>
@@ -51,11 +57,14 @@ export default function MyNav(props) {
           </div>
         ) : (
           <>
+          <Link to="/">
+          <Tab icon={<TuneRoundedIcon />} label="SELEKTA" />
+        </Link>
             <Link to="/signin">
               <Tab icon={<AccountCircleRoundedIcon />} label="SIGNIN" />
             </Link>
             <Link to="/signup">
-              <Tab icon={<AccountCircleRoundedIcon />} label="SIGNIN" />
+              <Tab icon={<AccountCircleRoundedIcon />} label="SIGNUP" />
             </Link>
           </>
         )}
