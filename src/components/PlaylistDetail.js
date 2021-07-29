@@ -67,7 +67,7 @@ export default class PlaylistDetail extends Component {
             <div>
               <p>
                 <b>
-                  {track.artists[0].name} - {track.name}
+                {track.artists} - {track.name}
                 </b>
               </p>
               <p>

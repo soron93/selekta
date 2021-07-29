@@ -106,7 +106,7 @@ class EditPlaylist extends Component {
             justifyContent="space-between"
            ><p> <Button onClick={() => {this.handleDelete(track._id)}}>
               <DeleteForeverRoundedIcon/>
-              </Button>{track.artists.name} - {track.name}</p>
+              </Button>{track.artists} - {track.name}</p>
               </Grid>
               </Grid></Container>   
                      })
