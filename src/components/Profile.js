@@ -14,7 +14,8 @@ import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 
 class Profile extends Component {
   state = {
-    playlists:[]
+    playlists:[],
+    
   }
 
   componentDidMount(){   // getting the db info from -> server -> db
@@ -27,6 +28,7 @@ class Profile extends Component {
       console.log("get fail");
     })
 
+  
 
 }
 

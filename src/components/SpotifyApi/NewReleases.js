@@ -1,74 +1,57 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { Component } from "react";
+import axios from "axios";
+import { API_URL } from "../config";
+import { Link } from "react-router-dom";
+import EditIcon from "@material-ui/icons/Edit";
+import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
+import SpotifyButton from "./Individual/SpotifyButton";
+import AudioPlayer from "material-ui-audio-player";
 
-//GOAL - SHOW NEW RELEASES ON THE PROFILE WITH THIS COMPONENT
+export default class PlaylistDetail extends Component {
+  state = {
+    newRelease: null,
+  };
 
-//API CALL  GET https://api.spotify.com/v1/browse/new-releases 
-//example axios request below  + with access
-/*
-  with limit added and offset ??? 
-curl -X "GET" "https://api.spotify.com/v1/browse/new-releases?limit=10&offset=3" -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer "
+  componentDidMount() {
+    // getting the db info from -> server -> db
+    let playlistId = this.props.match.params.id; 
+	// from the ID in routes in App js keywords match.params.id
+    axios
+      .get(`${API_URL}/api/playlist/${playlistId}`, { withCredentials: true })
+      .then((response) => {
+        console.log(response.data);
+        this.setState({ playlist: response.data }); // we update the state here
+      })
+      .catch(() => {
+        console.log("get fail");
+      });
+  }
 
+  render() {
+    if (!this.state.playlist) {
+      return <p>Loading . . . </p>;
+    }
 
-Select scopes
-This endpoint requires authentication, but does not require a specific scope.
-
-*/
-let SpotifyWebApi = require('spotify-web-api-node');
-
-spotifyApi.getNewReleases({ limit : 5, offset: 0, country: 'SE' })
-  .then(function(data) {
-    console.log(data.body);
-      done();
-    }, function(err) {
-       console.log("Something went wrong!", err);
-    });
-  });
-
-
-const NewReleases = () => {
-
-	// Set up states for retrieving access token and top tracks
-	const [token, setToken] = useState('');  //first get this
-	const [tracks, setTracks] = useState([]);
-
-	useEffect(()=>{
-
-	
-		axios('https://accounts.spotify.com/api/token', { // enpoint for access token send the post req  you need client id and secret 
-        
-			'method': 'POST',
-			'headers': {
-				 'Content-Type':'application/x-www-form-urlencoded',
-				 'Authorization': 'Basic ' + (new Buffer('7ff64ba3320346b3be3b5977db49e2dd' + ':' + '159e425980f746daa880cedcb8ab5e02').toString('base64')),
-			},
-			data: 'grant_type=client_credentials'
-		}).then(tokenresponse => {
-			console.log(tokenresponse.data.access_token);
-			setToken(tokenresponse.data.access_token);
-
-			// Api call for retrieving tracks data
-			axios(`https://api.spotify.com/v1/browse/new-releases?limit=10&offset=3`,{
-				'method': 'GET',
-				'headers': {
-					'Content-Type': 'application/json',
-					'Accept': 'application/json',
-					'Authorization': 'Bearer ' + tokenresponse.data.access_token
-				}
-			}).then(trackresponse=> {
-				console.log(trackresponse.data.tracks);
-				setTracks(trackresponse.data.tracks);
-			}).catch(error=> console.log(error))
-		}).catch(error => console.log(error));
-	},[])
-
-
-	return(
-		<div>
-			
-		</div>
-	)
+    return (
+      
+        <Container maxWidth="sm">
+          <Grid container spacing={2} xs={12}
+            direction="column"
+            justifyContent="space-between"
+           
+          >
+            <Grid item  xs={6}
+            container
+            direction="column"
+            justifyContent="space-between"
+            
+            >
+            
+        </Grid>
+        </Grid>
+      </Container>
+   
+    );
+  }
 }
-
-
-export default NewReleases

@@ -82,13 +82,15 @@ class EditPlaylist extends Component {
                     id="standard-basic"
                     name="Save"
                   value={this.state.playlist.name}/>
+
+                  <Link to="/profile">
                    <Button
                     variant="contained"
                     color="primary"
                     onClick={this.handleSaveButtonClick}
                   >
                     Save Playlist        
-                  </Button>
+                  </Button></Link>
 
                 </div>
                   </Container>   
@@ -108,7 +110,8 @@ class EditPlaylist extends Component {
               <DeleteForeverRoundedIcon/>
               </Button>{track.artists} - {track.name}</p>
               </Grid>
-              </Grid></Container>   
+              </Grid>
+              </Container>   
                      })
           }
           

@@ -1,14 +1,7 @@
-/*import React, { Component } from 'react'*/
-//import React, { useEffect, useState } from "react";
-//import axios from "axios";
-
 import React, { Component } from "react";
-//import Axios from 'axios';
-
-//import { Link } from 'react-router-dom'
 import SpotifyButton from "../Individual/SpotifyButton";
 import AudioPlayer from "material-ui-audio-player";
-//TRIED USING LINK DID NOT WORK, instead of a anchor tag
+
 
 class Tracks extends Component {
   render() {
