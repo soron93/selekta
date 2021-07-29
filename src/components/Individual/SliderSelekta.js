@@ -1,6 +1,24 @@
 import * as React from "react";
 import Box from "@material-ui/core/Box";
 import Slider from "@material-ui/core/Slider";
+import { createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
+
+// const muiTheme = createMuiTheme({
+//   overrides:{
+//     MuiSlider: {
+//       thumb:{
+//       color: "yellow",
+//       },
+//       track: {
+//         color: 'red'
+//       },
+//       rail: {
+//         color: 'black'
+//       }
+//     }
+// }
+// });
 
 //BELOW MATERIAL UI IMPORT CODE 
 
@@ -222,8 +240,10 @@ export default function SliderSelekta(props) {
         disableSwap
         marks={marks4}
       />
-
-   
+{/* 
+<ThemeProvider theme={muiTheme}>
+      <Slider min={18} max={90} defaultValue={40} />
+    </ThemeProvider> */}
 
     </Box>
   );

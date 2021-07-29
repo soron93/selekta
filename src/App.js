@@ -12,10 +12,18 @@ import Selekta from "./components/Selekta";
 import SpotifyLogin from "./components/SpotifyLogin/SpotifyLogin";
 import PlaylistDetail from "./components/PlaylistDetail";
 import EditPlaylist from "./components/EditPlaylist";
+import {  ThemeProvider, createMuiTheme, } from '@material-ui/core/styles';
+import { Grid, Typography, Button, Paper } from '@material-ui/core';
+import DarkMode from "./components/DarkMode"
 
 
 
 class App extends Component {
+
+
+
+
+
         state = {
           crud:[],
           user: null,
@@ -312,7 +320,11 @@ class App extends Component {
 
           return (
             <div>
+
+
+
               <MyNav user={this.state.user} onLogOut={this.handleLogOut} />
+              
 
               <Switch>
             
@@ -364,6 +376,12 @@ class App extends Component {
                 <Route component={NotFound} />
               
               </Switch>
+
+
+
+                <DarkMode/>
+                 
+
             </div>
           );
         }
