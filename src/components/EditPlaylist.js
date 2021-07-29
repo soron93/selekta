@@ -85,7 +85,7 @@ class EditPlaylist extends Component {
                    <Button
                     variant="contained"
                     color="primary"
-                    onClick={this.handleSaveButtonClick}
+                    onClick={this.handleSave}
                   >
                     Save Playlist        
                   </Button>

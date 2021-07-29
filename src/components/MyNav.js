@@ -40,13 +40,7 @@ export default function MyNav(props) {
   		alignItems="center"
 
       >
-<<<<<<< HEAD
-        <Link to="/Selekta">
-          <Tab icon={<TuneRoundedIcon />} label="SELEKTA" />
-        </Link>
-=======
      
->>>>>>> b2708a1f50e461f47bed007038bf52e036abb104
 
 	
        { props.user ? (
